@@ -1,0 +1,21 @@
+# Point this at the folder that contains valve1/, valve2/, other/
+dataset:
+  root: data/raw/SKAB/data
+  reference_rows: 400        # first N rows of each file = anomaly-free reference
+  exclude_files: [other/2.csv]   # first anomaly at row 104 -> no valid 400-row reference
+
+windowing:
+  window_size: 32
+  stride: 1
+
+preprocessing:
+  normalization_method: zscore   # zscore | minmax  (baseline requires zscore)
+
+detector:
+  name: zscore_baseline
+  threshold: 3.0                 # runtime-tunable later (hot-swappable)
+
+output:
+  metrics_dir: reports/metrics
+
+seed: 0
