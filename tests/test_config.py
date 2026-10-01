@@ -28,3 +28,36 @@ def test_unknown_key(tmp_path):
     p.write_text("windowing:\n  window_sizee: 8\n")
     with pytest.raises(ValueError, match="windowing"):
         load_config(p)
+
+
+from anomaly_detector.config import DatasetConfig, ModelConfig, TrainingConfig
+
+
+def _ae(**kw):
+    return Config(detector=DetectorConfig(name="conv_ae", threshold=None), **kw)
+
+
+def test_conv_ae_valid_and_threshold_optional():
+    cfg = _ae()
+    assert cfg.detector.threshold is None
+    with pytest.raises(ValueError):  # baseline must have a numeric threshold
+        Config(detector=DetectorConfig(name="zscore_baseline", threshold=None))
+
+
+def test_conv_ae_invalid_params():
+    with pytest.raises(ValueError, match="divisible by 4"):
+        _ae(windowing=WindowingConfig(window_size=30))
+    with pytest.raises(ValueError, match="odd"):
+        _ae(model=ModelConfig(kernel_size=4))
+    with pytest.raises(ValueError, match="train_rows"):
+        _ae(dataset=DatasetConfig(train_rows=400, reference_rows=400))
+    with pytest.raises(ValueError, match="validation region"):
+        _ae(dataset=DatasetConfig(train_rows=390, reference_rows=400))
+    with pytest.raises(ValueError, match="percentile"):
+        _ae(training=TrainingConfig(threshold_percentile=100.0))
+
+
+def test_conv_ae_yaml_loads():
+    cfg = load_config(Path(__file__).parents[1] / "configs" / "conv_ae.yaml")
+    assert cfg.detector.name == "conv_ae" and cfg.detector.threshold is None
+    assert cfg.model.latent_dim == 16

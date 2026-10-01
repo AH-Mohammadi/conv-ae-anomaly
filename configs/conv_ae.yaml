@@ -1,0 +1,34 @@
+dataset:
+  root: data/raw/SKAB/data
+  reference_rows: 400        # anomaly-free reference (same as baseline)
+  train_rows: 300            # rows [0,300) train, rows [300,400) validation
+  exclude_files: [other/2.csv]
+
+windowing:
+  window_size: 32            # model-artifact dependent (must be divisible by 4)
+  stride: 1
+
+preprocessing:
+  normalization_method: zscore
+
+model:                       # all model-artifact dependent
+  latent_dim: 16
+  filter_count: 16
+  kernel_size: 5
+
+training:
+  epochs: 100
+  batch_size: 64
+  learning_rate: 0.001
+  patience: 10
+  threshold_percentile: 99.0
+
+detector:
+  name: conv_ae
+  threshold: null            # null -> derived from validation errors; hot-swappable later
+
+output:
+  metrics_dir: reports/metrics
+  model_dir: models/conv_ae_v1
+
+seed: 0

@@ -11,6 +11,7 @@ dependencies = ["numpy", "pandas", "pyyaml"]
 
 [project.optional-dependencies]
 dev = ["pytest"]
+ml = ["tensorflow>=2.16"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

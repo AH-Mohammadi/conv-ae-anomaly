@@ -1,7 +1,8 @@
-"""F1 / FAR / MAR (point-wise). Undefined ratios are returned as None."""
+"""F1 / FAR / MAR (point-wise) and ROC-AUC. Undefined ratios are returned as None."""
 from __future__ import annotations
 
 import numpy as np
+import pandas as pd
 
 
 def _as_binary(a, name: str) -> np.ndarray:
@@ -49,3 +50,21 @@ def compute_metrics(y_true, y_pred) -> dict:
         "fn": fn,
         "n_points": int(yt.size),
     }
+
+
+def roc_auc(y_true, scores) -> float | None:
+    """Threshold-free ranking quality (Mann-Whitney formulation, ties averaged).
+
+    Probability that a random anomalous point scores higher than a random normal
+    point. 0.5 = chance, 1.0 = perfect. None if only one class is present.
+    """
+    yt = _as_binary(y_true, "y_true")
+    s = np.asarray(scores, dtype=np.float64)
+    if s.shape != yt.shape:
+        raise ValueError(f"shape mismatch: {yt.shape} vs {s.shape}")
+    n_pos = int(yt.sum())
+    n_neg = int(yt.size - n_pos)
+    if n_pos == 0 or n_neg == 0:
+        return None
+    ranks = pd.Series(s).rank(method="average").to_numpy()
+    return float((ranks[yt == 1].sum() - n_pos * (n_pos + 1) / 2) / (n_pos * n_neg))

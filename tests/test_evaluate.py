@@ -51,3 +51,12 @@ def test_exclude_files(synthetic_root):
     assert card["n_files"] == 2
     assert card["protocol"]["excluded_files"] == ["other/0.csv"]
     assert all(r["file"] != "other/0.csv" for r in card["per_file"])
+
+
+def test_scorecard_has_auc_and_segment_diagnostics(synthetic_root):
+    card = run_evaluation(_cfg(synthetic_root))
+    assert 0.5 < card["roc_auc"] <= 1.0
+    seg = card["diagnostics"]["far_by_segment"]
+    # synthetic anomaly is rows 450-500 of 600, so both segments exist
+    assert seg["pre_anomaly"]["normal_points"] > 0
+    assert seg["post_anomaly"]["normal_points"] > 0

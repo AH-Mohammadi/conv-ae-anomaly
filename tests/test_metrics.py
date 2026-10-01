@@ -40,3 +40,19 @@ def test_invalid_inputs():
         compute_metrics([0, 2], [0, 1])
     with pytest.raises(ValueError):
         compute_metrics([], [])
+
+
+from anomaly_detector.metrics import roc_auc
+
+
+def test_roc_auc_known_values():
+    assert roc_auc([0, 0, 1, 1], [0.1, 0.4, 0.35, 0.8]) == pytest.approx(0.75)
+    assert roc_auc([0, 0, 1, 1], [0.1, 0.2, 0.8, 0.9]) == 1.0
+    assert roc_auc([0, 0, 1, 1], [0.9, 0.8, 0.2, 0.1]) == 0.0
+    assert roc_auc([0, 1, 0, 1], [0.5, 0.5, 0.5, 0.5]) == 0.5  # all ties
+
+
+def test_roc_auc_undefined_and_invalid():
+    assert roc_auc([0, 0, 0], [0.1, 0.2, 0.3]) is None
+    with pytest.raises(ValueError):
+        roc_auc([0, 1], [0.1])
