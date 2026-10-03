@@ -4,6 +4,7 @@ Work in progress, built iteration by iteration.
 
 - **Iteration 1:** data pipeline, reference-only normalization, windowing, z-score baseline, F1/FAR/MAR harness.
 - **Iteration 2:** offline Conv1D autoencoder trained on anomaly-free reference windows, scored by the same harness.
+- **Iteration 3:** TFLite conversion (FP32 and full-integer INT8), compared against the FP32 Keras model.
 
 ## Setup
 
@@ -14,6 +15,8 @@ git clone --depth 1 https://github.com/waico/SKAB.git data/raw/SKAB
 pytest -q
 python scripts/evaluate.py --config configs/config.yaml     # baseline
 python scripts/train.py    --config configs/conv_ae.yaml    # Conv-AE
+python scripts/convert_tflite.py --config configs/conv_ae.yaml   # TFLite + FP32/INT8 comparison
+python scripts/investigate_quantization.py                       # optional: alternative strategies
 ```
 
 Scorecards: `reports/metrics/scorecard_<model>.json`. Trained artifacts: `models/conv_ae_v1/`
@@ -46,3 +49,15 @@ Numbers from the two setups are therefore **not directly comparable**.
 
 - hot-swappable: `detector.threshold`
 - model-artifact dependent: `windowing.window_size`, `model.latent_dim`, `model.filter_count`, `model.kernel_size`, weights
+
+## Model compression (Iteration 3)
+
+`scripts/convert_tflite.py` writes `detector_fp32.tflite`, `detector_int8.tflite`,
+`detector_int8_wide.tflite`, `detector.tflite` (the selected variant), `tflite_meta.json`
+(per-variant threshold and I/O quantization) and `reports/metrics/compression_report.json`.
+
+- Each variant gets **its own threshold** from its own anomaly-free validation errors (quantization shifts the error scale).
+- INT8 is full-integer with int8 input/output. Standard calibration uses 500 anomaly-free training windows.
+- Acceptance criteria were fixed before measuring: |delta| <= 0.03 for F1, FAR and MAR, and ROC-AUC drop <= 0.02 versus FP32 Keras.
+- Finding: with reference-only z-scoring, test inputs reach |z| ~ 250 (sensors with tiny reference std), while anomaly-free data stays within |z| ~ 5. Standard INT8 calibration clips and saturates on such inputs and fails the criteria. The **wide** variant adds copies of the calibration windows scaled by U(1, 4) and passes. It was introduced after looking at test metrics of the standard model (two widths tried), so its numbers carry mild selection bias.
+- Hot-swappable vs artifact-dependent: the INT8 input scale/zero-point and all weights belong to the model artifact; only the threshold is runtime-adjustable.

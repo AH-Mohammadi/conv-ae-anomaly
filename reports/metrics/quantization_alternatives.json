@@ -1,0 +1,62 @@
+{
+  "strategies": {
+    "dynamic_range": {
+      "f1": 0.794988196840385,
+      "far": 0.3638480163903893,
+      "mar": 0.1370338248048569,
+      "roc_auc": 0.8202428240464609,
+      "threshold": 0.8978886890411376,
+      "size_bytes": 26504
+    },
+    "float16": {
+      "f1": 0.7951308139534884,
+      "far": 0.3628236170609052,
+      "mar": 0.1373492076007254,
+      "roc_auc": 0.8201360467923744,
+      "threshold": 0.8980600690841672,
+      "size_bytes": 30120
+    }
+  },
+  "input_range": {
+    "Accelerometer1RMS": {
+      "median_reference_std": 0.0004316647955022508,
+      "share_abs_z_gt_10": 0.06723266512958456,
+      "max_abs_z": 259.39344415113453
+    },
+    "Accelerometer2RMS": {
+      "median_reference_std": 0.0012173868647948358,
+      "share_abs_z_gt_10": 0.06641342171555442,
+      "max_abs_z": 211.9694467291195
+    },
+    "Current": {
+      "median_reference_std": 0.2796521829276771,
+      "share_abs_z_gt_10": 0.0,
+      "max_abs_z": 4.61453451888478
+    },
+    "Pressure": {
+      "median_reference_std": 0.25818915378506335,
+      "share_abs_z_gt_10": 0.0,
+      "max_abs_z": 6.268384096754495
+    },
+    "Temperature": {
+      "median_reference_std": 0.33061677808264656,
+      "share_abs_z_gt_10": 0.0189146492464028,
+      "max_abs_z": 18.622636463640124
+    },
+    "Thermocouple": {
+      "median_reference_std": 0.02162947291168917,
+      "share_abs_z_gt_10": 0.05369113189018402,
+      "max_abs_z": 238.98444988470618
+    },
+    "Voltage": {
+      "median_reference_std": 10.862134772427334,
+      "share_abs_z_gt_10": 0.0,
+      "max_abs_z": 2.806157408351416
+    },
+    "Volume Flow RateRMS": {
+      "median_reference_std": 0.46506747894794837,
+      "share_abs_z_gt_10": 0.06371685666709363,
+      "max_abs_z": 182.6393554429488
+    }
+  }
+}

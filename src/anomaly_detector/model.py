@@ -5,8 +5,15 @@ Input (W, C) -> Conv1D -> pool -> Conv1D -> pool -> Dense(latent_dim)   [encoder
 """
 from __future__ import annotations
 
-import keras
-from keras import layers
+try:
+    import keras
+    from keras import layers
+except ImportError as exc:  # pragma: no cover
+    raise ImportError(
+        "TensorFlow/Keras is required for the Conv-AE. Install it with:\n"
+        "    pip install -e \".[dev,ml]\"\n"
+        "TensorFlow needs Python 3.10-3.12; check `python --version` if pip cannot find it."
+    ) from exc
 
 
 def build_conv_ae(

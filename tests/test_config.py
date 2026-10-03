@@ -61,3 +61,18 @@ def test_conv_ae_yaml_loads():
     cfg = load_config(Path(__file__).parents[1] / "configs" / "conv_ae.yaml")
     assert cfg.detector.name == "conv_ae" and cfg.detector.threshold is None
     assert cfg.model.latent_dim == 16
+
+
+from anomaly_detector.config import CompressionConfig
+
+
+def test_compression_config_validation():
+    assert Config().compression.calibration_samples == 500
+    with pytest.raises(ValueError):
+        Config(compression=CompressionConfig(calibration_samples=0))
+    with pytest.raises(ValueError):
+        Config(compression=CompressionConfig(max_metric_change=-0.1))
+    with pytest.raises(ValueError):
+        Config(compression=CompressionConfig(wide_calibration_max_amplitude=0.5))
+    cfg = load_config(Path(__file__).parents[1] / "configs" / "conv_ae.yaml")
+    assert cfg.compression.wide_calibration_max_amplitude == 4.0

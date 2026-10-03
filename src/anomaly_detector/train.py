@@ -13,9 +13,17 @@ import json
 import random
 from pathlib import Path
 
-import keras
 import numpy as np
-import tensorflow as tf
+
+try:
+    import keras
+    import tensorflow as tf
+except ImportError as exc:  # pragma: no cover
+    raise ImportError(
+        "TensorFlow/Keras is required for the Conv-AE. Install it with:\n"
+        "    pip install -e \".[dev,ml]\"\n"
+        "TensorFlow needs Python 3.10-3.12; check `python --version` if pip cannot find it."
+    ) from exc
 
 from .config import Config
 from .evaluate import (
@@ -47,6 +55,16 @@ def select_threshold(val_errors: np.ndarray, percentile: float) -> float:
     return float(np.percentile(val_errors, percentile))
 
 
+def resolve_threshold(val_errors: np.ndarray, cfg: Config) -> tuple[float, str]:
+    """Threshold for a deployed artifact: fixed config value, or percentile of ITS OWN
+    validation errors (each model variant gets its own threshold, no test labels)."""
+    if cfg.detector.threshold is not None:
+        return float(cfg.detector.threshold), "fixed value from config"
+    p = cfg.training.threshold_percentile
+    return (select_threshold(val_errors, p),
+            f"{p}th percentile of anomaly-free validation reconstruction errors")
+
+
 def fit_conv_ae(train_w: np.ndarray, val_w: np.ndarray, cfg: Config) -> tuple[keras.Model, dict]:
     m, t, w = cfg.model, cfg.training, cfg.windowing
     model = build_conv_ae(w.window_size, train_w.shape[2], m.latent_dim, m.filter_count, m.kernel_size)
@@ -75,13 +93,7 @@ def run_conv_ae(cfg: Config, model_dir: str | Path | None = None) -> tuple[dict,
     model, history = fit_conv_ae(train_w, val_w, cfg)
 
     val_err = reconstruction_errors(model, val_w)
-    if cfg.detector.threshold is None:
-        p = cfg.training.threshold_percentile
-        threshold = select_threshold(val_err, p)
-        source = f"{p}th percentile of anomaly-free validation reconstruction errors"
-    else:
-        threshold = float(cfg.detector.threshold)
-        source = "fixed value from config"
+    threshold, source = resolve_threshold(val_err, cfg)
 
     results = score_files(prepared, cfg, lambda w: reconstruction_errors(model, w))
 

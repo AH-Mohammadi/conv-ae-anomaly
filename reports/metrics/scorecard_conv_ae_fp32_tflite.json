@@ -1,0 +1,532 @@
+{
+  "schema_version": "scorecard_v1",
+  "dataset": "SKAB",
+  "model": "conv_ae_fp32_tflite",
+  "f1": 0.7951019221685258,
+  "far": 0.36291674427267645,
+  "mar": 0.1373492076007254,
+  "roc_auc": 0.8201366195214226,
+  "threshold": 0.8980500388145444,
+  "counts": {
+    "tp": 10941,
+    "fp": 3897,
+    "tn": 6841,
+    "fn": 1742,
+    "n_points": 23421
+  },
+  "protocol": {
+    "reference": "first 400 rows of each file",
+    "excluded_files": [
+      "other/2.csv"
+    ],
+    "exclusion_reason": "reference segment contains labeled anomalies",
+    "normalization_fit": "reference rows only, per file",
+    "scored_points": "windows whose last sample index >= reference_rows",
+    "label_assignment": "window end",
+    "pooling": "point-wise, pooled across files (single global threshold)",
+    "threshold_source": "99.0th percentile of anomaly-free validation reconstruction errors"
+  },
+  "config": {
+    "dataset": {
+      "root": "data/raw/SKAB/data",
+      "reference_rows": 400,
+      "train_rows": 300,
+      "exclude_files": [
+        "other/2.csv"
+      ]
+    },
+    "windowing": {
+      "window_size": 32,
+      "stride": 1
+    },
+    "preprocessing": {
+      "normalization_method": "zscore"
+    },
+    "model": {
+      "latent_dim": 16,
+      "filter_count": 16,
+      "kernel_size": 5
+    },
+    "training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "learning_rate": 0.001,
+      "patience": 10,
+      "threshold_percentile": 99.0
+    },
+    "compression": {
+      "calibration_samples": 500,
+      "max_metric_change": 0.03,
+      "max_auc_drop": 0.02,
+      "wide_calibration_max_amplitude": 4.0
+    },
+    "detector": {
+      "name": "conv_ae",
+      "threshold": null
+    },
+    "output": {
+      "metrics_dir": "reports/metrics",
+      "model_dir": "models/conv_ae_v1"
+    },
+    "seed": 0
+  },
+  "n_files": 33,
+  "provenance": {
+    "created_utc": "2026-10-03T18:48:36+00:00",
+    "git_commit": "fb9ac6aae4b2dd345376104d6e67e0dff0606621",
+    "skab_commit": "b2c0d46c2971dcbfe71e26087b6d231998bb91c2",
+    "python": "3.10.0",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "tensorflow": "2.21.0",
+    "keras": "3.12.4",
+    "tflite_backend": "tensorflow"
+  },
+  "per_file": [
+    {
+      "file": "valve1/0.csv",
+      "f1": 0.7412280701754386,
+      "far": 0.5,
+      "mar": 0.1571072319201995,
+      "precision": 0.6614481409001957,
+      "recall": 0.8428927680798005,
+      "tp": 338,
+      "fp": 173,
+      "tn": 173,
+      "fn": 63,
+      "n_points": 747
+    },
+    {
+      "file": "valve1/1.csv",
+      "f1": 0.7665847665847666,
+      "far": 0.2915451895043732,
+      "mar": 0.22388059701492538,
+      "precision": 0.7572815533980582,
+      "recall": 0.7761194029850746,
+      "tp": 312,
+      "fp": 100,
+      "tn": 243,
+      "fn": 90,
+      "n_points": 745
+    },
+    {
+      "file": "valve1/2.csv",
+      "f1": 0.6780684104627767,
+      "far": 0.9467455621301775,
+      "mar": 0.0,
+      "precision": 0.512937595129376,
+      "recall": 1.0,
+      "tp": 337,
+      "fp": 320,
+      "tn": 18,
+      "fn": 0,
+      "n_points": 675
+    },
+    {
+      "file": "valve1/3.csv",
+      "f1": 0.8571428571428571,
+      "far": 0.0,
+      "mar": 0.25,
+      "precision": 1.0,
+      "recall": 0.75,
+      "tp": 303,
+      "fp": 0,
+      "tn": 344,
+      "fn": 101,
+      "n_points": 748
+    },
+    {
+      "file": "valve1/4.csv",
+      "f1": 0.4696223316912972,
+      "far": 0.33815028901734107,
+      "mar": 0.5902578796561605,
+      "precision": 0.55,
+      "recall": 0.40974212034383956,
+      "tp": 143,
+      "fp": 117,
+      "tn": 229,
+      "fn": 206,
+      "n_points": 695
+    },
+    {
+      "file": "valve1/5.csv",
+      "f1": 0.8337468982630273,
+      "far": 0.1908831908831909,
+      "mar": 0.1662531017369727,
+      "precision": 0.8337468982630273,
+      "recall": 0.8337468982630273,
+      "tp": 336,
+      "fp": 67,
+      "tn": 284,
+      "fn": 67,
+      "n_points": 754
+    },
+    {
+      "file": "valve1/6.csv",
+      "f1": 0.64,
+      "far": 0.49570200573065903,
+      "mar": 0.32839506172839505,
+      "precision": 0.6112359550561798,
+      "recall": 0.671604938271605,
+      "tp": 272,
+      "fp": 173,
+      "tn": 176,
+      "fn": 133,
+      "n_points": 754
+    },
+    {
+      "file": "valve1/7.csv",
+      "f1": 0.8777173913043478,
+      "far": 0.02768166089965398,
+      "mar": 0.20246913580246914,
+      "precision": 0.9758308157099698,
+      "recall": 0.7975308641975308,
+      "tp": 323,
+      "fp": 8,
+      "tn": 281,
+      "fn": 82,
+      "n_points": 694
+    },
+    {
+      "file": "valve1/8.csv",
+      "f1": 0.8169596690796277,
+      "far": 0.5,
+      "mar": 0.0125,
+      "precision": 0.6966490299823633,
+      "recall": 0.9875,
+      "tp": 395,
+      "fp": 172,
+      "tn": 172,
+      "fn": 5,
+      "n_points": 744
+    },
+    {
+      "file": "valve1/9.csv",
+      "f1": 0.8357588357588358,
+      "far": 0.45664739884393063,
+      "mar": 0.0,
+      "precision": 0.7178571428571429,
+      "recall": 1.0,
+      "tp": 402,
+      "fp": 158,
+      "tn": 188,
+      "fn": 0,
+      "n_points": 748
+    },
+    {
+      "file": "valve1/10.csv",
+      "f1": 0.9384010484927916,
+      "far": 0.011594202898550725,
+      "mar": 0.10723192019950124,
+      "precision": 0.988950276243094,
+      "recall": 0.8927680798004988,
+      "tp": 358,
+      "fp": 4,
+      "tn": 341,
+      "fn": 43,
+      "n_points": 746
+    },
+    {
+      "file": "valve1/11.csv",
+      "f1": 0.7940813810110974,
+      "far": 0.2631578947368421,
+      "mar": 0.19298245614035087,
+      "precision": 0.7815533980582524,
+      "recall": 0.8070175438596491,
+      "tp": 322,
+      "fp": 90,
+      "tn": 252,
+      "fn": 77,
+      "n_points": 741
+    },
+    {
+      "file": "valve1/12.csv",
+      "f1": 0.7228260869565217,
+      "far": 0.8973607038123167,
+      "mar": 0.0,
+      "precision": 0.5659574468085107,
+      "recall": 1.0,
+      "tp": 399,
+      "fp": 306,
+      "tn": 35,
+      "fn": 0,
+      "n_points": 740
+    },
+    {
+      "file": "valve1/13.csv",
+      "f1": 0.9331550802139037,
+      "far": 0.0,
+      "mar": 0.12531328320802004,
+      "precision": 1.0,
+      "recall": 0.87468671679198,
+      "tp": 349,
+      "fp": 0,
+      "tn": 341,
+      "fn": 50,
+      "n_points": 740
+    },
+    {
+      "file": "valve1/14.csv",
+      "f1": 0.9100817438692098,
+      "far": 0.0029411764705882353,
+      "mar": 0.16290726817042606,
+      "precision": 0.9970149253731343,
+      "recall": 0.8370927318295739,
+      "tp": 334,
+      "fp": 1,
+      "tn": 339,
+      "fn": 65,
+      "n_points": 739
+    },
+    {
+      "file": "valve1/15.csv",
+      "f1": 0.939877300613497,
+      "far": 0.08092485549132948,
+      "mar": 0.05198019801980198,
+      "precision": 0.9318734793187348,
+      "recall": 0.948019801980198,
+      "tp": 383,
+      "fp": 28,
+      "tn": 318,
+      "fn": 21,
+      "n_points": 750
+    },
+    {
+      "file": "valve2/0.csv",
+      "f1": 0.65311004784689,
+      "far": 0.5105740181268882,
+      "mar": 0.30710659898477155,
+      "precision": 0.6176470588235294,
+      "recall": 0.6928934010152284,
+      "tp": 273,
+      "fp": 169,
+      "tn": 162,
+      "fn": 121,
+      "n_points": 725
+    },
+    {
+      "file": "valve2/1.csv",
+      "f1": 0.7328671328671329,
+      "far": 0.36363636363636365,
+      "mar": 0.2132132132132132,
+      "precision": 0.6858638743455497,
+      "recall": 0.7867867867867868,
+      "tp": 262,
+      "fp": 120,
+      "tn": 210,
+      "fn": 71,
+      "n_points": 663
+    },
+    {
+      "file": "valve2/2.csv",
+      "f1": 0.7596153846153846,
+      "far": 0.7485029940119761,
+      "mar": 0.0,
+      "precision": 0.6124031007751938,
+      "recall": 1.0,
+      "tp": 395,
+      "fp": 250,
+      "tn": 84,
+      "fn": 0,
+      "n_points": 729
+    },
+    {
+      "file": "valve2/3.csv",
+      "f1": 0.8935574229691877,
+      "far": 0.0,
+      "mar": 0.19240506329113924,
+      "precision": 1.0,
+      "recall": 0.8075949367088607,
+      "tp": 319,
+      "fp": 0,
+      "tn": 200,
+      "fn": 76,
+      "n_points": 595
+    },
+    {
+      "file": "other/1.csv",
+      "f1": 0.9842105263157894,
+      "far": 0.03184713375796178,
+      "mar": 0.005319148936170213,
+      "precision": 0.9739583333333334,
+      "recall": 0.9946808510638298,
+      "tp": 187,
+      "fp": 5,
+      "tn": 152,
+      "fn": 1,
+      "n_points": 345
+    },
+    {
+      "file": "other/3.csv",
+      "f1": 0.8317256162915327,
+      "far": 0.4336283185840708,
+      "mar": 0.02512562814070352,
+      "precision": 0.7252336448598131,
+      "recall": 0.9748743718592965,
+      "tp": 388,
+      "fp": 147,
+      "tn": 192,
+      "fn": 10,
+      "n_points": 737
+    },
+    {
+      "file": "other/4.csv",
+      "f1": 0.9295392953929539,
+      "far": 0.0,
+      "mar": 0.13164556962025317,
+      "precision": 1.0,
+      "recall": 0.8683544303797468,
+      "tp": 343,
+      "fp": 0,
+      "tn": 396,
+      "fn": 52,
+      "n_points": 791
+    },
+    {
+      "file": "other/5.csv",
+      "f1": 0.8257804632426989,
+      "far": 0.5014492753623189,
+      "mar": 0.0,
+      "precision": 0.7032590051457976,
+      "recall": 1.0,
+      "tp": 410,
+      "fp": 173,
+      "tn": 172,
+      "fn": 0,
+      "n_points": 755
+    },
+    {
+      "file": "other/6.csv",
+      "f1": 0.7976190476190477,
+      "far": 0.591304347826087,
+      "mar": 0.0,
+      "precision": 0.6633663366336634,
+      "recall": 1.0,
+      "tp": 402,
+      "fp": 204,
+      "tn": 141,
+      "fn": 0,
+      "n_points": 747
+    },
+    {
+      "file": "other/7.csv",
+      "f1": 0.8726355611601513,
+      "far": 0.2915451895043732,
+      "mar": 0.002881844380403458,
+      "precision": 0.7757847533632287,
+      "recall": 0.9971181556195965,
+      "tp": 346,
+      "fp": 100,
+      "tn": 243,
+      "fn": 1,
+      "n_points": 690
+    },
+    {
+      "file": "other/8.csv",
+      "f1": 0.6919242273180458,
+      "far": 0.7354651162790697,
+      "mar": 0.13895781637717122,
+      "precision": 0.5783333333333334,
+      "recall": 0.8610421836228288,
+      "tp": 347,
+      "fp": 253,
+      "tn": 91,
+      "fn": 56,
+      "n_points": 747
+    },
+    {
+      "file": "other/9.csv",
+      "f1": 0.806841046277666,
+      "far": 0.5597667638483965,
+      "mar": 0.0,
+      "precision": 0.6762225969645869,
+      "recall": 1.0,
+      "tp": 401,
+      "fp": 192,
+      "tn": 151,
+      "fn": 0,
+      "n_points": 744
+    },
+    {
+      "file": "other/10.csv",
+      "f1": 0.8562962962962963,
+      "far": 0.5454545454545454,
+      "mar": 0.013651877133105802,
+      "precision": 0.756544502617801,
+      "recall": 0.9863481228668942,
+      "tp": 578,
+      "fp": 186,
+      "tn": 155,
+      "fn": 8,
+      "n_points": 927
+    },
+    {
+      "file": "other/11.csv",
+      "f1": 0.8348794063079777,
+      "far": 0.5221238938053098,
+      "mar": 0.0022172949002217295,
+      "precision": 0.7177033492822966,
+      "recall": 0.9977827050997783,
+      "tp": 450,
+      "fp": 177,
+      "tn": 162,
+      "fn": 1,
+      "n_points": 790
+    },
+    {
+      "file": "other/12.csv",
+      "f1": 0.667590027700831,
+      "far": 0.5073746312684366,
+      "mar": 0.22006472491909385,
+      "precision": 0.5835351089588378,
+      "recall": 0.7799352750809061,
+      "tp": 241,
+      "fp": 172,
+      "tn": 167,
+      "fn": 68,
+      "n_points": 648
+    },
+    {
+      "file": "other/13.csv",
+      "f1": 0.0,
+      "far": 0.0,
+      "mar": 1.0,
+      "precision": null,
+      "recall": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 258,
+      "fn": 265,
+      "n_points": 523
+    },
+    {
+      "file": "other/14.csv",
+      "f1": 0.9346092503987241,
+      "far": 0.15763546798029557,
+      "mar": 0.029801324503311258,
+      "precision": 0.9015384615384615,
+      "recall": 0.9701986754966887,
+      "tp": 293,
+      "fp": 32,
+      "tn": 171,
+      "fn": 9,
+      "n_points": 505
+    }
+  ],
+  "diagnostics": {
+    "far_by_segment": {
+      "pre_anomaly": {
+        "false_alarms": 818,
+        "normal_points": 5769,
+        "far": 0.14179233836020108
+      },
+      "post_anomaly": {
+        "false_alarms": 3079,
+        "normal_points": 4969,
+        "far": 0.619641779029986
+      }
+    }
+  },
+  "variant": "fp32_tflite",
+  "model_version": "conv_ae_v1"
+}

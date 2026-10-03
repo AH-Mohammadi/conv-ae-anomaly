@@ -139,6 +139,7 @@ def far_by_segment(results: list[FileResult], threshold: float) -> dict:
 def build_scorecard(
     results: list[FileResult], cfg: Config, *, threshold: float, threshold_source: str,
     excluded: list[str], extra_provenance: dict | None = None, extra: dict | None = None,
+    model_name: str | None = None,
 ) -> dict:
     """Apply one threshold to all scores and assemble the versioned scorecard."""
     y_true = np.concatenate([r.y_true for r in results])
@@ -151,7 +152,7 @@ def build_scorecard(
     card = {
         "schema_version": SCHEMA_VERSION,
         "dataset": "SKAB",
-        "model": cfg.detector.name,
+        "model": model_name or cfg.detector.name,
         "f1": pooled["f1"],
         "far": pooled["far"],
         "mar": pooled["mar"],

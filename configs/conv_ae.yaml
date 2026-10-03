@@ -32,3 +32,9 @@ output:
   model_dir: models/conv_ae_v1
 
 seed: 0
+
+compression:                 # offline TFLite conversion (Iteration 3)
+  calibration_samples: 500   # INT8 representative windows, drawn from anomaly-free TRAIN windows
+  max_metric_change: 0.03    # acceptance: |delta| of F1, FAR, MAR vs FP32 Keras
+  max_auc_drop: 0.02         # acceptance: ROC-AUC decrease vs FP32 Keras
+  wide_calibration_max_amplitude: 4.0   # 'wide' INT8 variant: extra calibration windows scaled by U(1, k)

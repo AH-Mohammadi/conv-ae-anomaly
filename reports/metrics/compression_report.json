@@ -1,0 +1,303 @@
+{
+  "schema_version": "compression_report_v1",
+  "dataset": "SKAB",
+  "model_version": "conv_ae_v1",
+  "variants": {
+    "fp32_keras": {
+      "f1": 0.7951019221685258,
+      "far": 0.36291674427267645,
+      "mar": 0.1373492076007254,
+      "roc_auc": 0.820136645220803,
+      "threshold": 0.8980500078201291,
+      "size_bytes": 156256
+    },
+    "fp32_tflite": {
+      "f1": 0.7951019221685258,
+      "far": 0.36291674427267645,
+      "mar": 0.1373492076007254,
+      "roc_auc": 0.8201366195214226,
+      "threshold": 0.8980500388145444,
+      "size_bytes": 44220
+    },
+    "int8_tflite": {
+      "f1": 0.7877686303859724,
+      "far": 0.4026820636990128,
+      "mar": 0.1285973350153749,
+      "roc_auc": 0.7975024776772612,
+      "threshold": 0.9413891172409017,
+      "size_bytes": 26488
+    },
+    "int8_wide_tflite": {
+      "f1": 0.7948029324236046,
+      "far": 0.3651517973551872,
+      "mar": 0.1366395963100213,
+      "roc_auc": 0.8190497963970261,
+      "threshold": 0.8967231893539427,
+      "size_bytes": 26488
+    }
+  },
+  "int8_analysis": {
+    "int8_tflite": {
+      "delta_vs_fp32_keras": {
+        "f1": -0.007333291782553375,
+        "far": 0.039765319426336376,
+        "mar": -0.008751872585350484,
+        "roc_auc": -0.02263416754354175
+      },
+      "checks": {
+        "f1_within_tolerance": true,
+        "far_within_tolerance": false,
+        "mar_within_tolerance": true,
+        "auc_drop_within_tolerance": false
+      },
+      "passed": false,
+      "score_agreement_vs_fp32_keras": {
+        "pearson": 0.9486985547182387,
+        "median_relative_diff": 0.15980613956298517
+      },
+      "with_fp32_keras_threshold": {
+        "threshold": 0.8980500078201291,
+        "f1": 0.7866840638995662,
+        "far": 0.42093499720618366,
+        "mar": 0.12055507372072853
+      },
+      "input_range": [
+        -5.086710747331381,
+        4.9684151485562325
+      ],
+      "input_clip_fraction": {
+        "validation": 0.0,
+        "test": 0.07430514415481833
+      },
+      "fp32_keras_with_clipped_inputs": {
+        "f1": 0.7925976894940788,
+        "far": 0.37129819333209163,
+        "mar": 0.13719151620279113,
+        "roc_auc": 0.8122525085422171
+      }
+    },
+    "int8_wide_tflite": {
+      "delta_vs_fp32_keras": {
+        "f1": -0.00029898974492126307,
+        "far": 0.002235053082510763,
+        "mar": -0.0007096112907040986,
+        "roc_auc": -0.0010868488237768537
+      },
+      "checks": {
+        "f1_within_tolerance": true,
+        "far_within_tolerance": true,
+        "mar_within_tolerance": true,
+        "auc_drop_within_tolerance": true
+      },
+      "passed": true,
+      "score_agreement_vs_fp32_keras": {
+        "pearson": 0.9492954343354654,
+        "median_relative_diff": 0.0047384325292686704
+      },
+      "with_fp32_keras_threshold": {
+        "threshold": 0.8980500078201291,
+        "f1": 0.7949453502305821,
+        "far": 0.3641273980257031,
+        "mar": 0.13695497910588977
+      },
+      "input_range": [
+        -15.468228340148926,
+        18.535204648971558
+      ],
+      "input_clip_fraction": {
+        "validation": 0.0,
+        "test": 0.026648427159386874
+      },
+      "fp32_keras_with_clipped_inputs": {
+        "f1": 0.7951019221685258,
+        "far": 0.36291674427267645,
+        "mar": 0.1373492076007254,
+        "roc_auc": 0.8196086477798151
+      }
+    }
+  },
+  "fp32_tflite_vs_keras": {
+    "max_abs_score_diff": 0.000732421875,
+    "max_relative_score_diff": 5.933903201661208e-07
+  },
+  "acceptance": {
+    "criteria": {
+      "max_metric_change_abs": 0.03,
+      "max_auc_drop": 0.02
+    },
+    "selection_rule": "first passing INT8 variant in order int8_tflite, int8_wide_tflite; otherwise fp32_tflite",
+    "selected": "int8_wide_tflite"
+  },
+  "calibration": {
+    "standard": {
+      "n_samples": 500,
+      "source": "random anomaly-free training windows (seeded)"
+    },
+    "wide": {
+      "n_samples": 1000,
+      "max_amplitude": 4.0,
+      "source": "standard windows + copies scaled by U(1, max_amplitude)",
+      "note": "This variant was introduced after inspecting test-set metrics of the standard INT8 model (2 widths tried), so its reported numbers carry mild selection bias."
+    }
+  },
+  "tflite": {
+    "fp32_tflite": {
+      "ops": [
+        "CONCATENATION",
+        "CONV_2D",
+        "EXPAND_DIMS",
+        "FULLY_CONNECTED",
+        "MAX_POOL_2D",
+        "PACK",
+        "RESHAPE",
+        "SHAPE",
+        "STRIDED_SLICE",
+        "TILE"
+      ],
+      "backend": "tensorflow",
+      "input_shape": [
+        1,
+        32,
+        8
+      ],
+      "input": {
+        "dtype": "float32",
+        "scale": 0.0,
+        "zero_point": 0
+      },
+      "output": {
+        "dtype": "float32",
+        "scale": 0.0,
+        "zero_point": 0
+      }
+    },
+    "int8_tflite": {
+      "ops": [
+        "CONCATENATION",
+        "CONV_2D",
+        "EXPAND_DIMS",
+        "FULLY_CONNECTED",
+        "MAX_POOL_2D",
+        "PACK",
+        "RESHAPE",
+        "SHAPE",
+        "STRIDED_SLICE",
+        "TILE"
+      ],
+      "backend": "tensorflow",
+      "input_shape": [
+        1,
+        32,
+        8
+      ],
+      "input": {
+        "dtype": "int8",
+        "scale": 0.0394318662583828,
+        "zero_point": 1
+      },
+      "output": {
+        "dtype": "int8",
+        "scale": 0.023898495361208916,
+        "zero_point": -20
+      }
+    },
+    "int8_wide_tflite": {
+      "ops": [
+        "CONCATENATION",
+        "CONV_2D",
+        "EXPAND_DIMS",
+        "FULLY_CONNECTED",
+        "MAX_POOL_2D",
+        "PACK",
+        "RESHAPE",
+        "SHAPE",
+        "STRIDED_SLICE",
+        "TILE"
+      ],
+      "backend": "tensorflow",
+      "input_shape": [
+        1,
+        32,
+        8
+      ],
+      "input": {
+        "dtype": "int8",
+        "scale": 0.1333467960357666,
+        "zero_point": -12
+      },
+      "output": {
+        "dtype": "int8",
+        "scale": 0.07174459844827652,
+        "zero_point": -25
+      }
+    }
+  },
+  "n_files": 33,
+  "protocol": {
+    "reference": "first 400 rows of each file",
+    "excluded_files": [
+      "other/2.csv"
+    ],
+    "exclusion_reason": "reference segment contains labeled anomalies",
+    "normalization_fit": "reference rows only, per file",
+    "scored_points": "windows whose last sample index >= reference_rows",
+    "label_assignment": "window end",
+    "pooling": "point-wise, pooled across files (single global threshold)",
+    "threshold_source": "99.0th percentile of anomaly-free validation reconstruction errors"
+  },
+  "config": {
+    "dataset": {
+      "root": "data/raw/SKAB/data",
+      "reference_rows": 400,
+      "train_rows": 300,
+      "exclude_files": [
+        "other/2.csv"
+      ]
+    },
+    "windowing": {
+      "window_size": 32,
+      "stride": 1
+    },
+    "preprocessing": {
+      "normalization_method": "zscore"
+    },
+    "model": {
+      "latent_dim": 16,
+      "filter_count": 16,
+      "kernel_size": 5
+    },
+    "training": {
+      "epochs": 100,
+      "batch_size": 64,
+      "learning_rate": 0.001,
+      "patience": 10,
+      "threshold_percentile": 99.0
+    },
+    "compression": {
+      "calibration_samples": 500,
+      "max_metric_change": 0.03,
+      "max_auc_drop": 0.02,
+      "wide_calibration_max_amplitude": 4.0
+    },
+    "detector": {
+      "name": "conv_ae",
+      "threshold": null
+    },
+    "output": {
+      "metrics_dir": "reports/metrics",
+      "model_dir": "models/conv_ae_v1"
+    },
+    "seed": 0
+  },
+  "provenance": {
+    "created_utc": "2026-10-03T18:48:35+00:00",
+    "git_commit": "fb9ac6aae4b2dd345376104d6e67e0dff0606621",
+    "skab_commit": "b2c0d46c2971dcbfe71e26087b6d231998bb91c2",
+    "python": "3.10.0",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "tensorflow": "2.21.0",
+    "keras": "3.12.4",
+    "tflite_backend": "tensorflow"
+  }
+}

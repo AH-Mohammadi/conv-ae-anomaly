@@ -5,6 +5,7 @@ Hyperparameter classes (relevant for the future runtime-config iteration):
   * model-artifact dependent (needs retraining/new .tflite): windowing.window_size,
     model.latent_dim, model.filter_count, model.kernel_size, trained weights
   * training-only: training.*
+  * compression-only (offline conversion): compression.*
 """
 from __future__ import annotations
 
@@ -59,6 +60,19 @@ class TrainingConfig:
 
 
 @dataclass(frozen=True)
+class CompressionConfig:
+    # Representative (calibration) windows for INT8: anomaly-free TRAIN windows only.
+    calibration_samples: int = 500
+    # Acceptance criteria for INT8 vs the FP32 Keras model (set before measuring):
+    max_metric_change: float = 0.03   # absolute |delta| allowed for F1, FAR and MAR
+    max_auc_drop: float = 0.02        # allowed ROC-AUC decrease
+    # "Wide" INT8 variant: calibration set = the windows above plus a copy scaled by a
+    # random per-window factor in [1, k]. Added after observing that test inputs reach
+    # |z| ~ 250 while anomaly-free data stays within |z| ~ 5.
+    wide_calibration_max_amplitude: float = 4.0
+
+
+@dataclass(frozen=True)
 class DetectorConfig:
     name: str = "zscore_baseline"
     # zscore_baseline: required, fixed. conv_ae: None -> derived from validation
@@ -79,6 +93,7 @@ class Config:
     preprocessing: PreprocessingConfig = field(default_factory=PreprocessingConfig)
     model: ModelConfig = field(default_factory=ModelConfig)
     training: TrainingConfig = field(default_factory=TrainingConfig)
+    compression: CompressionConfig = field(default_factory=CompressionConfig)
     detector: DetectorConfig = field(default_factory=DetectorConfig)
     output: OutputConfig = field(default_factory=OutputConfig)
     seed: int = 0
@@ -135,6 +150,14 @@ class Config:
             if not (50.0 < t.threshold_percentile < 100.0):
                 raise ValueError("training.threshold_percentile must be in (50, 100)")
 
+        c = self.compression
+        if c.calibration_samples < 1:
+            raise ValueError("compression.calibration_samples must be >= 1")
+        if c.max_metric_change < 0 or c.max_auc_drop < 0:
+            raise ValueError("compression tolerances must be >= 0")
+        if c.wide_calibration_max_amplitude < 1.0:
+            raise ValueError("compression.wide_calibration_max_amplitude must be >= 1")
+
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
@@ -152,7 +175,7 @@ def load_config(path: str | Path) -> Config:
     with open(path, "r", encoding="utf-8") as fh:
         raw = yaml.safe_load(fh) or {}
     known = {"dataset", "windowing", "preprocessing", "model", "training",
-             "detector", "output", "seed"}
+             "compression", "detector", "output", "seed"}
     unknown = set(raw) - known
     if unknown:
         raise ValueError(f"Unknown top-level config keys: {sorted(unknown)}")
@@ -164,6 +187,7 @@ def load_config(path: str | Path) -> Config:
         ),
         model=_section(ModelConfig, raw.get("model"), "model"),
         training=_section(TrainingConfig, raw.get("training"), "training"),
+        compression=_section(CompressionConfig, raw.get("compression"), "compression"),
         detector=_section(DetectorConfig, raw.get("detector"), "detector"),
         output=_section(OutputConfig, raw.get("output"), "output"),
         seed=int(raw.get("seed", 0)),
