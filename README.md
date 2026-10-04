@@ -5,6 +5,7 @@ Work in progress, built iteration by iteration.
 - **Iteration 1:** data pipeline, reference-only normalization, windowing, z-score baseline, F1/FAR/MAR harness.
 - **Iteration 2:** offline Conv1D autoencoder trained on anomaly-free reference windows, scored by the same harness.
 - **Iteration 3:** TFLite conversion (FP32 and full-integer INT8), compared against the FP32 Keras model.
+- **Iteration 4:** Raspberry Pi batch benchmark (latency, memory, CPU, thermals, desktop-vs-device agreement).
 
 ## Setup
 
@@ -61,3 +62,20 @@ Numbers from the two setups are therefore **not directly comparable**.
 - Acceptance criteria were fixed before measuring: |delta| <= 0.03 for F1, FAR and MAR, and ROC-AUC drop <= 0.02 versus FP32 Keras.
 - Finding: with reference-only z-scoring, test inputs reach |z| ~ 250 (sensors with tiny reference std), while anomaly-free data stays within |z| ~ 5. Standard INT8 calibration clips and saturates on such inputs and fails the criteria. The **wide** variant adds copies of the calibration windows scaled by U(1, 4) and passes. It was introduced after looking at test metrics of the standard model (two widths tried), so its numbers carry mild selection bias.
 - Hot-swappable vs artifact-dependent: the INT8 input scale/zero-point and all weights belong to the model artifact; only the threshold is runtime-adjustable.
+
+## Raspberry Pi benchmark (Iteration 4)
+
+```bash
+python scripts/export_pi_bundle.py --out pi_bundle     # desktop: bundle with .tflite, windows, desktop reference scores
+# copy pi_bundle/ to the Pi (64-bit OS, python3, numpy, ai-edge-litert or tflite-runtime), then on the Pi:
+python3 benchmark_pi.py                                # writes pi_benchmark_report.json
+```
+
+- The bundle is self-contained and numpy-only on the Pi (no TensorFlow, pandas or SKAB).
+- Each variant runs in its own subprocess (per-variant peak RSS). Latency is measured from Python:
+  `invoke` = `interpreter.invoke()` only; `end_to_end` = quantize + invoke + dequantize + error.
+- Desktop-vs-Pi agreement criteria (fixed before measuring): >= 99.9% identical decisions at the variant's threshold,
+  |delta| <= 0.002 for pooled F1/FAR/MAR, and (FP32 only) max relative score diff <= 1e-4.
+- The report records the device model, OS/kernel, runtime package versions, XNNPACK presence in the runtime log,
+  temperature/frequency/throttle flags and a sustained-run drift check. `is_raspberry_pi` is false on any other machine.
+- Benchmark results from a non-Pi machine must not be reported as Pi results.

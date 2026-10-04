@@ -15,24 +15,24 @@
       "f1": 0.7951019221685258,
       "far": 0.36291674427267645,
       "mar": 0.1373492076007254,
-      "roc_auc": 0.8201366195214226,
-      "threshold": 0.8980500388145444,
+      "roc_auc": 0.8201366085074024,
+      "threshold": 0.8980500556802256,
       "size_bytes": 44220
     },
     "int8_tflite": {
       "f1": 0.7877686303859724,
       "far": 0.4026820636990128,
       "mar": 0.1285973350153749,
-      "roc_auc": 0.7975024776772612,
-      "threshold": 0.9413891172409017,
+      "roc_auc": 0.7975024666632411,
+      "threshold": 0.9413891421406108,
       "size_bytes": 26488
     },
     "int8_wide_tflite": {
       "f1": 0.7948029324236046,
       "far": 0.3651517973551872,
       "mar": 0.1366395963100213,
-      "roc_auc": 0.8190497963970261,
-      "threshold": 0.8967231893539427,
+      "roc_auc": 0.8190498037397063,
+      "threshold": 0.8967231384288161,
       "size_bytes": 26488
     }
   },
@@ -42,7 +42,7 @@
         "f1": -0.007333291782553375,
         "far": 0.039765319426336376,
         "mar": -0.008751872585350484,
-        "roc_auc": -0.02263416754354175
+        "roc_auc": -0.02263417855756189
       },
       "checks": {
         "f1_within_tolerance": true,
@@ -52,8 +52,8 @@
       },
       "passed": false,
       "score_agreement_vs_fp32_keras": {
-        "pearson": 0.9486985547182387,
-        "median_relative_diff": 0.15980613956298517
+        "pearson": 0.9486985551067738,
+        "median_relative_diff": 0.15980608084188716
       },
       "with_fp32_keras_threshold": {
         "threshold": 0.8980500078201291,
@@ -81,7 +81,7 @@
         "f1": -0.00029898974492126307,
         "far": 0.002235053082510763,
         "mar": -0.0007096112907040986,
-        "roc_auc": -0.0010868488237768537
+        "roc_auc": -0.001086841481096723
       },
       "checks": {
         "f1_within_tolerance": true,
@@ -91,8 +91,8 @@
       },
       "passed": true,
       "score_agreement_vs_fp32_keras": {
-        "pearson": 0.9492954343354654,
-        "median_relative_diff": 0.0047384325292686704
+        "pearson": 0.9492954343482614,
+        "median_relative_diff": 0.004738414810631028
       },
       "with_fp32_keras_threshold": {
         "threshold": 0.8980500078201291,
@@ -117,8 +117,8 @@
     }
   },
   "fp32_tflite_vs_keras": {
-    "max_abs_score_diff": 0.000732421875,
-    "max_relative_score_diff": 5.933903201661208e-07
+    "max_abs_score_diff": 0.0007937809646136884,
+    "max_relative_score_diff": 5.716033503333226e-07
   },
   "acceptance": {
     "criteria": {
@@ -290,10 +290,10 @@
     "seed": 0
   },
   "provenance": {
-    "created_utc": "2026-10-03T18:48:35+00:00",
-    "git_commit": "fb9ac6aae4b2dd345376104d6e67e0dff0606621",
+    "created_utc": "2026-10-04T16:05:11+00:00",
+    "git_commit": "c15649878930ca20a3710984624e0d6a0534f185",
     "skab_commit": "b2c0d46c2971dcbfe71e26087b6d231998bb91c2",
-    "python": "3.10.0",
+    "python": "3.10.11",
     "numpy": "2.2.6",
     "pandas": "2.3.3",
     "tensorflow": "2.21.0",

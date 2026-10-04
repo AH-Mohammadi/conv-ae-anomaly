@@ -6,3 +6,5 @@ data/raw/*
 !data/raw/.gitkeep
 models/*
 !models/.gitkeep
+pi_bundle/
+pi_benchmark_report*.json
