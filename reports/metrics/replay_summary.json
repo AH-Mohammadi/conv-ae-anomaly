@@ -1,0 +1,6612 @@
+{
+  "schema_version": "replay_summary_v1",
+  "variant": "fp32_tflite",
+  "speed": 0.0,
+  "loops": 10,
+  "n_episodes": 330,
+  "total_records": 234210,
+  "total_missed_windows": 0,
+  "total_deadline_overruns": 0,
+  "episodes": [
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06181543148600772,
+        "median": 0.07339999865507707,
+        "p99": 0.2698100003181023,
+        "max": 3.7565000020549633
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/0.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1145,
+      "n_records": 745,
+      "n_expected_records": 745,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053835720663654364,
+        "median": 0.0720999960321933,
+        "p99": 0.2498360021854745,
+        "max": 0.68450000253506
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/1.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1075,
+      "n_records": 675,
+      "n_expected_records": 675,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05368269770135453,
+        "median": 0.0720999960321933,
+        "p99": 0.25587200070731325,
+        "max": 0.9014999959617853
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/2.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053490243927382566,
+        "median": 0.07159999950090423,
+        "p99": 0.17683900259726199,
+        "max": 1.8179000035161152
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/3.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1095,
+      "n_records": 695,
+      "n_expected_records": 695,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05094758011655857,
+        "median": 0.0714999987394549,
+        "p99": 0.1845820041489782,
+        "max": 0.4257000036886893
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/4.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.052282842266503676,
+        "median": 0.07159999950090423,
+        "p99": 0.2216670011694079,
+        "max": 0.5746000024373643
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/5.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.059201906385659635,
+        "median": 0.07199999527074397,
+        "p99": 0.26476200146134954,
+        "max": 0.6947000001673587
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/6.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1094,
+      "n_records": 694,
+      "n_expected_records": 694,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05751243145140169,
+        "median": 0.07170000026235357,
+        "p99": 0.22681799913698295,
+        "max": 1.3708999977097847
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/7.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053019755128602145,
+        "median": 0.0718000010238029,
+        "p99": 0.14862399875710233,
+        "max": 0.487600002088584
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/8.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0547549651529257,
+        "median": 0.07140000525396317,
+        "p99": 0.21612700002151525,
+        "max": 1.7685999991954304
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/9.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1146,
+      "n_records": 746,
+      "n_expected_records": 746,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053636213054424994,
+        "median": 0.07159999950090423,
+        "p99": 0.22360000220942247,
+        "max": 1.0372999968240038
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/10.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1141,
+      "n_records": 741,
+      "n_expected_records": 741,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05395004387939223,
+        "median": 0.0714999987394549,
+        "p99": 0.26542000268818683,
+        "max": 0.4676999960793182
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/11.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05450131581088308,
+        "median": 0.07179999374784529,
+        "p99": 0.24630899919429725,
+        "max": 0.40779999835649505
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/12.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.12433622804038398,
+        "median": 0.07519999780924991,
+        "p99": 0.2831100004550534,
+        "max": 33.35189999779686
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/13.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1139,
+      "n_records": 739,
+      "n_expected_records": 739,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05433345042844487,
+        "median": 0.07150000601541251,
+        "p99": 0.2748620002239477,
+        "max": 0.9941999960574321
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/14.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1150,
+      "n_records": 750,
+      "n_expected_records": 750,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05166878255651049,
+        "median": 0.07159999950090423,
+        "p99": 0.16406500049924932,
+        "max": 0.43300000106683
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/15.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1125,
+      "n_records": 725,
+      "n_expected_records": 725,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05434853332634601,
+        "median": 0.0718000010238029,
+        "p99": 0.26419199566589663,
+        "max": 0.40190000436268747
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/0.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1063,
+      "n_records": 663,
+      "n_expected_records": 663,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053805738350699336,
+        "median": 0.07159999950090423,
+        "p99": 0.294094001583288,
+        "max": 0.764000003982801
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/1.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1129,
+      "n_records": 729,
+      "n_expected_records": 729,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054161558917876614,
+        "median": 0.0718000010238029,
+        "p99": 0.246288002235815,
+        "max": 0.7564000043203123
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/2.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 995,
+      "n_records": 595,
+      "n_expected_records": 595,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.051447839396315434,
+        "median": 0.0714999987394549,
+        "p99": 0.25648800583439746,
+        "max": 0.5923999997321516
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/3.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 745,
+      "n_records": 345,
+      "n_expected_records": 345,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.046705771468098484,
+        "median": 0.0021000014385208488,
+        "p99": 0.31438800302566905,
+        "max": 0.7982999959494919
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/1.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1137,
+      "n_records": 737,
+      "n_expected_records": 737,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05531671042755785,
+        "median": 0.0718000010238029,
+        "p99": 0.24396799766691413,
+        "max": 0.5053999993833713
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/3.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1191,
+      "n_records": 791,
+      "n_expected_records": 791,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05589034431301195,
+        "median": 0.07170000026235357,
+        "p99": 0.27883000075234976,
+        "max": 1.3882999992347322
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/4.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1155,
+      "n_records": 755,
+      "n_expected_records": 755,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053733333293146966,
+        "median": 0.07159999950090423,
+        "p99": 0.24214399963966576,
+        "max": 0.6017999985488132
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/5.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05244978204657386,
+        "median": 0.07170000026235357,
+        "p99": 0.16567799888434817,
+        "max": 0.901999999769032
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/6.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1090,
+      "n_records": 690,
+      "n_expected_records": 690,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0534282567034531,
+        "median": 0.0714999987394549,
+        "p99": 0.23870700199040448,
+        "max": 0.5543000006582588
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/7.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.051815693048271494,
+        "median": 0.07189999450929463,
+        "p99": 0.17631399910896967,
+        "max": 0.4197000016574748
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/8.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05455166087590664,
+        "median": 0.0718000010238029,
+        "p99": 0.24796600184345,
+        "max": 0.5641999960062094
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/9.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1327,
+      "n_records": 927,
+      "n_expected_records": 927,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055087038518747945,
+        "median": 0.07170000026235357,
+        "p99": 0.2001479982573074,
+        "max": 0.40300000546267256
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/10.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1190,
+      "n_records": 790,
+      "n_expected_records": 790,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05963554612811882,
+        "median": 0.0714999987394549,
+        "p99": 0.3047409970167788,
+        "max": 1.9312999938847497
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/11.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1048,
+      "n_records": 648,
+      "n_expected_records": 648,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05075076338985023,
+        "median": 0.07159999950090423,
+        "p99": 0.19883900182321596,
+        "max": 0.4580000022542663
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/12.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 923,
+      "n_records": 523,
+      "n_expected_records": 523,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.08126370507463478,
+        "median": 0.07150000601541251,
+        "p99": 0.5902999958198039,
+        "max": 4.28920000558719
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/13.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 905,
+      "n_records": 505,
+      "n_expected_records": 505,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0490262982797634,
+        "median": 0.07139999797800556,
+        "p99": 0.2342360021430069,
+        "max": 0.9548999951221049
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/14.csv",
+      "loop": 0
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05578308630076585,
+        "median": 0.07169999298639596,
+        "p99": 0.2804599991941357,
+        "max": 1.4037000000826083
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/0.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1145,
+      "n_records": 745,
+      "n_expected_records": 745,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05573493445177225,
+        "median": 0.07170000026235357,
+        "p99": 0.26259600330376964,
+        "max": 0.9050000007846393
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/1.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1075,
+      "n_records": 675,
+      "n_expected_records": 675,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05319330228091932,
+        "median": 0.07160000677686185,
+        "p99": 0.2623879996826871,
+        "max": 0.5556999967666343
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/2.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05384006985259982,
+        "median": 0.07159999950090423,
+        "p99": 0.23679499819991176,
+        "max": 0.39450000622309744
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/3.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1095,
+      "n_records": 695,
+      "n_expected_records": 695,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05596082206532682,
+        "median": 0.07159999950090423,
+        "p99": 0.2255240001250058,
+        "max": 0.8493999994243495
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/4.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05318509513956932,
+        "median": 0.07159999950090423,
+        "p99": 0.22810399976151594,
+        "max": 0.636800003121607
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/5.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05374332763486868,
+        "median": 0.0714999987394549,
+        "p99": 0.19474399865430356,
+        "max": 1.5688999992562458
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/6.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1094,
+      "n_records": 694,
+      "n_expected_records": 694,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05416809882101615,
+        "median": 0.07170000026235357,
+        "p99": 0.30284200067399003,
+        "max": 0.7244000007631257
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/7.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054973951076650734,
+        "median": 0.07200000254670158,
+        "p99": 0.2510740014258767,
+        "max": 0.6143999999039806
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/8.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056827352012613894,
+        "median": 0.07190000178525224,
+        "p99": 0.2378079982008784,
+        "max": 0.970900000538677
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/9.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1146,
+      "n_records": 746,
+      "n_expected_records": 746,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05610488654147016,
+        "median": 0.0718000010238029,
+        "p99": 0.2870400032406902,
+        "max": 0.48689999675843865
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/10.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1141,
+      "n_records": 741,
+      "n_expected_records": 741,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05370832614133977,
+        "median": 0.0714999987394549,
+        "p99": 0.20103999704588182,
+        "max": 0.8471999972243793
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/11.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05311798248792337,
+        "median": 0.0714999987394549,
+        "p99": 0.2272710017132339,
+        "max": 0.4785000055562705
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/12.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05749815784184376,
+        "median": 0.07170000026235357,
+        "p99": 0.2932720011449404,
+        "max": 0.8252999978139997
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/13.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1139,
+      "n_records": 739,
+      "n_expected_records": 739,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05278138734252683,
+        "median": 0.07170000026235357,
+        "p99": 0.23498599941376594,
+        "max": 0.6084000051487237
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/14.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1150,
+      "n_records": 750,
+      "n_expected_records": 750,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.14415313044319983,
+        "median": 0.07230000483104959,
+        "p99": 0.5518300026596988,
+        "max": 33.98480000032578
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/15.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1125,
+      "n_records": 725,
+      "n_expected_records": 725,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05274675560778835,
+        "median": 0.07170000026235357,
+        "p99": 0.22518800076795736,
+        "max": 0.6952000039746054
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/0.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1063,
+      "n_records": 663,
+      "n_expected_records": 663,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05246848552165814,
+        "median": 0.0714999987394549,
+        "p99": 0.24783600165392247,
+        "max": 1.0146999993594363
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/1.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1129,
+      "n_records": 729,
+      "n_expected_records": 729,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054428520730690017,
+        "median": 0.07170000026235357,
+        "p99": 0.24423600116279048,
+        "max": 0.8204999976442195
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/2.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 995,
+      "n_records": 595,
+      "n_expected_records": 595,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.050449346848260426,
+        "median": 0.07159999950090423,
+        "p99": 0.19901800478692028,
+        "max": 1.0990000009769574
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/3.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 745,
+      "n_records": 345,
+      "n_expected_records": 345,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.04375046963886289,
+        "median": 0.0023000029614195228,
+        "p99": 0.2648039959603919,
+        "max": 0.5792000010842457
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/1.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1137,
+      "n_records": 737,
+      "n_expected_records": 737,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054827440699155745,
+        "median": 0.0718000010238029,
+        "p99": 0.24644000252010337,
+        "max": 0.6391999995685183
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/3.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1191,
+      "n_records": 791,
+      "n_expected_records": 791,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05379403866997566,
+        "median": 0.07170000026235357,
+        "p99": 0.19499999907566215,
+        "max": 0.7614999994984828
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/4.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1155,
+      "n_records": 755,
+      "n_expected_records": 755,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05668380944808195,
+        "median": 0.07159999950090423,
+        "p99": 0.24760599713772577,
+        "max": 0.6359000035445206
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/5.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0544718395766466,
+        "median": 0.07170000026235357,
+        "p99": 0.24106400145683432,
+        "max": 0.7355999987339601
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/6.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1090,
+      "n_records": 690,
+      "n_expected_records": 690,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05316275217727365,
+        "median": 0.07160000313888304,
+        "p99": 0.23690900292421938,
+        "max": 0.5253999988781288
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/7.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05474760247444784,
+        "median": 0.07189999450929463,
+        "p99": 0.2615620019787457,
+        "max": 0.7570000016130507
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/8.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053971328639449354,
+        "median": 0.07190000178525224,
+        "p99": 0.2340989999356679,
+        "max": 0.7310999935725704
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/9.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1327,
+      "n_records": 927,
+      "n_expected_records": 927,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0564932932501456,
+        "median": 0.07170000026235357,
+        "p99": 0.2245640047476628,
+        "max": 0.5205999987083487
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/10.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1190,
+      "n_records": 790,
+      "n_expected_records": 790,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05809848739505362,
+        "median": 0.07170000026235357,
+        "p99": 0.30231299555452923,
+        "max": 0.8852000028127804
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/11.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1048,
+      "n_records": 648,
+      "n_expected_records": 648,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.051451335946153066,
+        "median": 0.0714999987394549,
+        "p99": 0.25085900000703987,
+        "max": 0.3880000003846362
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/12.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 923,
+      "n_records": 523,
+      "n_expected_records": 523,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.04716077992103072,
+        "median": 0.07139999797800556,
+        "p99": 0.2066420009941793,
+        "max": 0.43569999979808927
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/13.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 905,
+      "n_records": 505,
+      "n_expected_records": 505,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0527576795838341,
+        "median": 0.0712000037310645,
+        "p99": 0.2927799950703064,
+        "max": 1.061800001480151
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/14.csv",
+      "loop": 1
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.1321401918288576,
+        "median": 0.07280000136233866,
+        "p99": 0.35291600084747043,
+        "max": 35.2294999975129
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/0.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1145,
+      "n_records": 745,
+      "n_expected_records": 745,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05505685586488387,
+        "median": 0.07200000254670158,
+        "p99": 0.27878399676410376,
+        "max": 0.9433999948669225
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/1.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1075,
+      "n_records": 675,
+      "n_expected_records": 675,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05508920938577936,
+        "median": 0.0718000010238029,
+        "p99": 0.2726220006297804,
+        "max": 0.5407999997260049
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/2.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05753580145917116,
+        "median": 0.07200000254670158,
+        "p99": 0.25182400007906836,
+        "max": 2.9489000007743016
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/3.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1095,
+      "n_records": 695,
+      "n_expected_records": 695,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.057397899403955496,
+        "median": 0.07159999950090423,
+        "p99": 0.44778399969800314,
+        "max": 0.9071999957086518
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/4.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0580640379930108,
+        "median": 0.07159999950090423,
+        "p99": 0.2612340003543074,
+        "max": 0.5267000015010126
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/5.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05704350084797972,
+        "median": 0.07170000026235357,
+        "p99": 0.2555699999356875,
+        "max": 1.7315000004600734
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/6.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1094,
+      "n_records": 694,
+      "n_expected_records": 694,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053071115061983816,
+        "median": 0.07159999950090423,
+        "p99": 0.23268000164534872,
+        "max": 1.1255999997956678
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/7.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05367613643089511,
+        "median": 0.07159999950090423,
+        "p99": 0.2544030018179905,
+        "max": 0.5157000050530769
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/8.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05677691645610377,
+        "median": 0.07159999950090423,
+        "p99": 0.2534619983634907,
+        "max": 0.9559000027365983
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/9.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1146,
+      "n_records": 746,
+      "n_expected_records": 746,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.051395636978390564,
+        "median": 0.07190000178525224,
+        "p99": 0.16440499821328536,
+        "max": 0.44039999920642003
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/10.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1141,
+      "n_records": 741,
+      "n_expected_records": 741,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053959421574841696,
+        "median": 0.07159999950090423,
+        "p99": 0.22866000217618374,
+        "max": 0.48970000352710485
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/11.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05441280712451165,
+        "median": 0.07179999374784529,
+        "p99": 0.17681899887975125,
+        "max": 1.0899999979301356
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/12.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054490175496443714,
+        "median": 0.07159999950090423,
+        "p99": 0.27086000140116023,
+        "max": 0.793100000009872
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/13.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1139,
+      "n_records": 739,
+      "n_expected_records": 739,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05591299382890423,
+        "median": 0.07210000330815092,
+        "p99": 0.26036200069938786,
+        "max": 0.8107000030577183
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/14.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1150,
+      "n_records": 750,
+      "n_expected_records": 750,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0545699999265312,
+        "median": 0.07159999950090423,
+        "p99": 0.30286299595900346,
+        "max": 0.4986000058124773
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/15.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1125,
+      "n_records": 725,
+      "n_expected_records": 725,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05749048882474502,
+        "median": 0.07190000178525224,
+        "p99": 0.27576000225963065,
+        "max": 0.7811999967088923
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/0.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1063,
+      "n_records": 663,
+      "n_expected_records": 663,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.10071411111846791,
+        "median": 0.07249999907799065,
+        "p99": 0.27824799850349896,
+        "max": 28.90109999862034
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/1.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1129,
+      "n_records": 729,
+      "n_expected_records": 729,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05602125773606228,
+        "median": 0.07199999527074397,
+        "p99": 0.2995440035010688,
+        "max": 0.6310000026132911
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/2.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 995,
+      "n_records": 595,
+      "n_expected_records": 595,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0508553767708439,
+        "median": 0.0714999987394549,
+        "p99": 0.2629480033647263,
+        "max": 0.4750000007334165
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/3.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 745,
+      "n_records": 345,
+      "n_expected_records": 345,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.04468872498028643,
+        "median": 0.0022000021999701858,
+        "p99": 0.26852000155486144,
+        "max": 1.852300003520213
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/1.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1137,
+      "n_records": 737,
+      "n_expected_records": 737,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05765417767868835,
+        "median": 0.07170000026235357,
+        "p99": 0.30795999744441377,
+        "max": 1.542500001960434
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/3.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1191,
+      "n_records": 791,
+      "n_expected_records": 791,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05405398826773641,
+        "median": 0.07159999950090423,
+        "p99": 0.21457000257214526,
+        "max": 0.7453999933204614
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/4.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1155,
+      "n_records": 755,
+      "n_expected_records": 755,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05406458870693235,
+        "median": 0.07179999374784529,
+        "p99": 0.23622999826329763,
+        "max": 0.6462999954237603
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/5.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05404298176397038,
+        "median": 0.0718000010238029,
+        "p99": 0.2394259962602518,
+        "max": 0.42219999886583537
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/6.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1090,
+      "n_records": 690,
+      "n_expected_records": 690,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.057797981698467574,
+        "median": 0.0718000010238029,
+        "p99": 0.3011000000697085,
+        "max": 0.945200001297053
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/7.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05603103745638806,
+        "median": 0.0718000010238029,
+        "p99": 0.2972480026073748,
+        "max": 0.5538000041269697
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/8.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05301451053058442,
+        "median": 0.07190000178525224,
+        "p99": 0.2509059984731692,
+        "max": 0.4312999953981489
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/9.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1327,
+      "n_records": 927,
+      "n_expected_records": 927,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0579323286872979,
+        "median": 0.07190000178525224,
+        "p99": 0.24415000021690506,
+        "max": 1.8120999957318418
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/10.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1190,
+      "n_records": 790,
+      "n_expected_records": 790,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05631722683994835,
+        "median": 0.07199999527074397,
+        "p99": 0.23190299943962528,
+        "max": 0.5168999996385537
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/11.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1048,
+      "n_records": 648,
+      "n_expected_records": 648,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.052973377766460446,
+        "median": 0.07189999450929463,
+        "p99": 0.32331199945474426,
+        "max": 1.0240000046906061
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/12.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 923,
+      "n_records": 523,
+      "n_expected_records": 523,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.049662513537070074,
+        "median": 0.0714999987394549,
+        "p99": 0.2534979955817106,
+        "max": 0.6018999993102625
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/13.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 905,
+      "n_records": 505,
+      "n_expected_records": 505,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05122530395493107,
+        "median": 0.07179999374784529,
+        "p99": 0.28752000187523696,
+        "max": 1.214099997014273
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/14.csv",
+      "loop": 2
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05997959883052754,
+        "median": 0.07170000026235357,
+        "p99": 0.24923199875047428,
+        "max": 0.9186000024783425
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/0.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1145,
+      "n_records": 745,
+      "n_expected_records": 745,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.13821082972305293,
+        "median": 0.07389999518636614,
+        "p99": 0.43134400155395036,
+        "max": 33.42520000296645
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/1.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1075,
+      "n_records": 675,
+      "n_expected_records": 675,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05218195358729856,
+        "median": 0.0718000010238029,
+        "p99": 0.22566400250070723,
+        "max": 0.527299998793751
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/2.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055096428588088296,
+        "median": 0.07159999950090423,
+        "p99": 0.30272099727881124,
+        "max": 0.6265999982133508
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/3.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1095,
+      "n_records": 695,
+      "n_expected_records": 695,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05253780831622181,
+        "median": 0.07190000178525224,
+        "p99": 0.22424999740905882,
+        "max": 1.0543000025791116
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/4.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0543921145612428,
+        "median": 0.07159999950090423,
+        "p99": 0.22440499807999034,
+        "max": 1.0738999990280718
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/5.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.07820840563904131,
+        "median": 0.07199999527074397,
+        "p99": 0.44558900066476803,
+        "max": 5.567399995925371
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/6.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1094,
+      "n_records": 694,
+      "n_expected_records": 694,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06173537499715073,
+        "median": 0.07199999527074397,
+        "p99": 0.31473500224819867,
+        "max": 1.1398999995435588
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/7.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053770716680243115,
+        "median": 0.0718000010238029,
+        "p99": 0.2099040008033621,
+        "max": 1.6170000017154962
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/8.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05482247375031545,
+        "median": 0.07170000026235357,
+        "p99": 0.27094999932160124,
+        "max": 0.6433000016841106
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/9.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1146,
+      "n_records": 746,
+      "n_expected_records": 746,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05536867361456842,
+        "median": 0.0714999987394549,
+        "p99": 0.2359199988859468,
+        "max": 1.4774000010220334
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/10.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1141,
+      "n_records": 741,
+      "n_expected_records": 741,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056035670525382955,
+        "median": 0.07170000026235357,
+        "p99": 0.3119600019999765,
+        "max": 0.9340999968117103
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/11.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05532973687845617,
+        "median": 0.07190000178525224,
+        "p99": 0.2636250004434257,
+        "max": 1.1333000002196059
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/12.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05812412289965881,
+        "median": 0.07190000178525224,
+        "p99": 0.3795209992676927,
+        "max": 0.8508999962941743
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/13.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1139,
+      "n_records": 739,
+      "n_expected_records": 739,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.052214135168047904,
+        "median": 0.07150000601541251,
+        "p99": 0.16527199972188095,
+        "max": 0.5706000010832213
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/14.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1150,
+      "n_records": 750,
+      "n_expected_records": 750,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05450765192938928,
+        "median": 0.07189999450929463,
+        "p99": 0.24885699946025852,
+        "max": 0.49900000158231705
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/15.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1125,
+      "n_records": 725,
+      "n_expected_records": 725,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05531742223279758,
+        "median": 0.07190000178525224,
+        "p99": 0.29691199713852245,
+        "max": 0.5792000010842457
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/0.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1063,
+      "n_records": 663,
+      "n_expected_records": 663,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.057416462755292434,
+        "median": 0.0718000010238029,
+        "p99": 0.2678679986274797,
+        "max": 0.760499999159947
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/1.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1129,
+      "n_records": 729,
+      "n_expected_records": 729,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.15711691775748984,
+        "median": 0.07320000440813601,
+        "p99": 0.3905239957384771,
+        "max": 54.92890000459738
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/2.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 995,
+      "n_records": 595,
+      "n_expected_records": 595,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.11623819101538659,
+        "median": 0.07200000254670158,
+        "p99": 1.4912880022893658,
+        "max": 9.526100002403837
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/3.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 745,
+      "n_records": 345,
+      "n_expected_records": 345,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.08092577179117229,
+        "median": 0.0037999998312443495,
+        "p99": 0.6775560014648325,
+        "max": 4.416599993419368
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/1.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1137,
+      "n_records": 737,
+      "n_expected_records": 737,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.08647511007240502,
+        "median": 0.07300000288523734,
+        "p99": 0.5305199994472812,
+        "max": 4.400300000270363
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/3.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1191,
+      "n_records": 791,
+      "n_expected_records": 791,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06331645673197381,
+        "median": 0.0720999960321933,
+        "p99": 0.3126799987512628,
+        "max": 1.5802000052644871
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/4.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1155,
+      "n_records": 755,
+      "n_expected_records": 755,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06344493512428079,
+        "median": 0.07219999679364264,
+        "p99": 0.35656400184962017,
+        "max": 2.1180000039748847
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/5.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.058430427182317606,
+        "median": 0.07170000026235357,
+        "p99": 0.1992839989543425,
+        "max": 5.1000000021304
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/6.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1090,
+      "n_records": 690,
+      "n_expected_records": 690,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05764229360774561,
+        "median": 0.07219999679364264,
+        "p99": 0.27298700188111863,
+        "max": 0.8256999935838394
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/7.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06600863124752814,
+        "median": 0.07219999679364264,
+        "p99": 0.3632379956252397,
+        "max": 2.6956000001518987
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/8.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05414160839702252,
+        "median": 0.0714999987394549,
+        "p99": 0.2441959988937013,
+        "max": 1.0128000067197718
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/9.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1327,
+      "n_records": 927,
+      "n_expected_records": 927,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05837219295448279,
+        "median": 0.07210000330815092,
+        "p99": 0.23459800242562787,
+        "max": 0.7756999984849244
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/10.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1190,
+      "n_records": 790,
+      "n_expected_records": 790,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06217781507274128,
+        "median": 0.0720999960321933,
+        "p99": 0.36769999787793395,
+        "max": 1.6662999987602234
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/11.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1048,
+      "n_records": 648,
+      "n_expected_records": 648,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05280104966101926,
+        "median": 0.07199999527074397,
+        "p99": 0.26751599580165886,
+        "max": 0.7291000001714565
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/12.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 923,
+      "n_records": 523,
+      "n_expected_records": 523,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0665917661382069,
+        "median": 0.07190000178525224,
+        "p99": 0.3228599988506171,
+        "max": 4.747600003611296
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/13.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 905,
+      "n_records": 505,
+      "n_expected_records": 505,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05675325961590575,
+        "median": 0.07179999374784529,
+        "p99": 0.4007039964199076,
+        "max": 0.8530999984941445
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/14.csv",
+      "loop": 3
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.059252136021851684,
+        "median": 0.07220000406960025,
+        "p99": 0.26079600080265547,
+        "max": 2.4543999970774166
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/0.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1145,
+      "n_records": 745,
+      "n_expected_records": 745,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055044279419806864,
+        "median": 0.07179999374784529,
+        "p99": 0.1941359951160841,
+        "max": 1.8206000022473745
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/1.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1075,
+      "n_records": 675,
+      "n_expected_records": 675,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0540637209074745,
+        "median": 0.07199999527074397,
+        "p99": 0.2374520002922507,
+        "max": 1.0951000003842637
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/2.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056859582026709335,
+        "median": 0.07200000254670158,
+        "p99": 0.2450949988269707,
+        "max": 1.5723999968031421
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/3.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1095,
+      "n_records": 695,
+      "n_expected_records": 695,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05448858451537286,
+        "median": 0.07179999374784529,
+        "p99": 0.3036660009820474,
+        "max": 0.9578000026522204
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/4.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05388882147892543,
+        "median": 0.07170000026235357,
+        "p99": 0.17221800000697865,
+        "max": 0.9867000044323504
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/5.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05578076292471549,
+        "median": 0.07189999450929463,
+        "p99": 0.24053200148046058,
+        "max": 0.8528000034857541
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/6.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1094,
+      "n_records": 694,
+      "n_expected_records": 694,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054130712922305375,
+        "median": 0.07179999374784529,
+        "p99": 0.26668400016205845,
+        "max": 1.5558000013697892
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/7.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.128999300664822,
+        "median": 0.0718000010238029,
+        "p99": 0.30983599979663234,
+        "max": 46.010499994736165
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/8.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.051576045373428726,
+        "median": 0.0718000010238029,
+        "p99": 0.16148999915458254,
+        "max": 0.6529999955091625
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/9.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1146,
+      "n_records": 746,
+      "n_expected_records": 746,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05432600347974531,
+        "median": 0.07199999890872277,
+        "p99": 0.22940499693504493,
+        "max": 0.626500004727859
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/10.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1141,
+      "n_records": 741,
+      "n_expected_records": 741,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05548220861232395,
+        "median": 0.07190000178525224,
+        "p99": 0.2350000024307501,
+        "max": 1.0906000024988316
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/11.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05399640358518809,
+        "median": 0.07200000254670158,
+        "p99": 0.2327330013940794,
+        "max": 1.4922999980626628
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/12.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056886578909542185,
+        "median": 0.07170000026235357,
+        "p99": 0.2773109974077635,
+        "max": 1.1472999976831488
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/13.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1139,
+      "n_records": 739,
+      "n_expected_records": 739,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056809130651836265,
+        "median": 0.0718000010238029,
+        "p99": 0.2846679996582672,
+        "max": 1.1290999973425642
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/14.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1150,
+      "n_records": 750,
+      "n_expected_records": 750,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05494973914566166,
+        "median": 0.07190000178525224,
+        "p99": 0.2558100014721276,
+        "max": 0.7570000016130507
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/15.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1125,
+      "n_records": 725,
+      "n_expected_records": 725,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05505448892169321,
+        "median": 0.07200000254670158,
+        "p99": 0.24131999962264664,
+        "max": 1.0813999979291111
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/0.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1063,
+      "n_records": 663,
+      "n_expected_records": 663,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05053828790414157,
+        "median": 0.0718000010238029,
+        "p99": 0.18523000457207453,
+        "max": 0.5115000021760352
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/1.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1129,
+      "n_records": 729,
+      "n_expected_records": 729,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.057220017748135836,
+        "median": 0.0720999960321933,
+        "p99": 0.2566720012691804,
+        "max": 0.49819999549072236
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/2.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 995,
+      "n_records": 595,
+      "n_expected_records": 595,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05379728635804653,
+        "median": 0.07190000178525224,
+        "p99": 0.31946600152878085,
+        "max": 0.7543999963672832
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/3.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 745,
+      "n_records": 345,
+      "n_expected_records": 345,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.044231140826306865,
+        "median": 0.0021000014385208488,
+        "p99": 0.3321520017925634,
+        "max": 0.7317999989027157
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/1.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1137,
+      "n_records": 737,
+      "n_expected_records": 737,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0531825856373235,
+        "median": 0.0718000010238029,
+        "p99": 0.21262400172418,
+        "max": 0.49589999980526045
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/3.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1191,
+      "n_records": 791,
+      "n_expected_records": 791,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05626893369016674,
+        "median": 0.0718000010238029,
+        "p99": 0.25168000138364716,
+        "max": 1.43940000270959
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/4.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1155,
+      "n_records": 755,
+      "n_expected_records": 755,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05431324676953224,
+        "median": 0.0718000010238029,
+        "p99": 0.23235200074850623,
+        "max": 0.9815000012167729
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/5.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.057310026187535765,
+        "median": 0.0718000010238029,
+        "p99": 0.3010399994673198,
+        "max": 1.9382999962545
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/6.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1090,
+      "n_records": 690,
+      "n_expected_records": 690,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05545770638508064,
+        "median": 0.07200000254670158,
+        "p99": 0.33565899568202273,
+        "max": 0.7201000044005923
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/7.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0563441150425507,
+        "median": 0.07199999527074397,
+        "p99": 0.23681999824475486,
+        "max": 1.3401999967754818
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/8.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05637019239021083,
+        "median": 0.07170000026235357,
+        "p99": 0.32471699778397983,
+        "max": 1.316099995165132
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/9.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1327,
+      "n_records": 927,
+      "n_expected_records": 927,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05719442344772452,
+        "median": 0.07190000178525224,
+        "p99": 0.17960999844945041,
+        "max": 1.8007000035140663
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/10.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1190,
+      "n_records": 790,
+      "n_expected_records": 790,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05565378130751098,
+        "median": 0.0720999960321933,
+        "p99": 0.23933600430609583,
+        "max": 0.4695000025094487
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/11.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1048,
+      "n_records": 648,
+      "n_expected_records": 648,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05318578237408633,
+        "median": 0.07190000178525224,
+        "p99": 0.24301200013724128,
+        "max": 1.0187000007135794
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/12.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 923,
+      "n_records": 523,
+      "n_expected_records": 523,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.061080714946328676,
+        "median": 0.07170000026235357,
+        "p99": 0.4005239976686421,
+        "max": 3.9628999948035926
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/13.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 905,
+      "n_records": 505,
+      "n_expected_records": 505,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05218740322727463,
+        "median": 0.07159999950090423,
+        "p99": 0.2959399984683842,
+        "max": 2.660599995579105
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/14.csv",
+      "loop": 4
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05288491728524787,
+        "median": 0.07170000026235357,
+        "p99": 0.20579599819029673,
+        "max": 0.651100002869498
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/0.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1145,
+      "n_records": 745,
+      "n_expected_records": 745,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05617912680288883,
+        "median": 0.07200000254670158,
+        "p99": 0.31126399873755833,
+        "max": 0.9177000029012561
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/1.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1075,
+      "n_records": 675,
+      "n_expected_records": 675,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.050256279125257375,
+        "median": 0.07170000026235357,
+        "p99": 0.2040700019279029,
+        "max": 0.4985999985365197
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/2.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06362778749018794,
+        "median": 0.07200000254670158,
+        "p99": 0.26192500037723215,
+        "max": 1.2138999954913743
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/3.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1095,
+      "n_records": 695,
+      "n_expected_records": 695,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05775379003971798,
+        "median": 0.07210000330815092,
+        "p99": 0.26213200180791224,
+        "max": 1.479400001699105
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/4.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05543145562429909,
+        "median": 0.07190000178525224,
+        "p99": 0.26442100104759486,
+        "max": 1.0802000033436343
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/5.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056397053665292664,
+        "median": 0.07199999527074397,
+        "p99": 0.2468410023720935,
+        "max": 0.7713999948464334
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/6.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1094,
+      "n_records": 694,
+      "n_expected_records": 694,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.059299543068975794,
+        "median": 0.07225000081234612,
+        "p99": 0.34814700316928715,
+        "max": 1.6871999978320673
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/7.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.07736853152433927,
+        "median": 0.07259999983943999,
+        "p99": 0.476222002907888,
+        "max": 1.556800001708325
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/8.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06262325776029234,
+        "median": 0.07229999755509198,
+        "p99": 0.40783999815175725,
+        "max": 1.5375000002677552
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/9.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1146,
+      "n_records": 746,
+      "n_expected_records": 746,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0812076787566108,
+        "median": 0.07239999831654131,
+        "p99": 0.7313100013561765,
+        "max": 2.7871999991475604
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/10.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1141,
+      "n_records": 741,
+      "n_expected_records": 741,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.061423575792724464,
+        "median": 0.07239999831654131,
+        "p99": 0.35234000097261464,
+        "max": 1.2621999994735233
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/11.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05741815781348442,
+        "median": 0.07239999831654131,
+        "p99": 0.2998179964924906,
+        "max": 1.3758000059169717
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/12.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055993859617350004,
+        "median": 0.07189999814727344,
+        "p99": 0.2948540025681721,
+        "max": 0.8042000044952147
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/13.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1139,
+      "n_records": 739,
+      "n_expected_records": 739,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055638191539485946,
+        "median": 0.07189999450929463,
+        "p99": 0.2391679976426529,
+        "max": 1.8042000010609627
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/14.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1150,
+      "n_records": 750,
+      "n_expected_records": 750,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05478495652230619,
+        "median": 0.07189999450929463,
+        "p99": 0.2516020043549359,
+        "max": 0.753100001020357
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/15.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1125,
+      "n_records": 725,
+      "n_expected_records": 725,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056143911089748144,
+        "median": 0.07170000026235357,
+        "p99": 0.29096400074195106,
+        "max": 1.54639999527717
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/0.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1063,
+      "n_records": 663,
+      "n_expected_records": 663,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05420489190277746,
+        "median": 0.07189999450929463,
+        "p99": 0.2703500031202539,
+        "max": 0.9290000016335398
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/1.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1129,
+      "n_records": 729,
+      "n_expected_records": 729,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05540389746928256,
+        "median": 0.07199999527074397,
+        "p99": 0.28965600271476455,
+        "max": 1.0796999995363876
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/2.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 995,
+      "n_records": 595,
+      "n_expected_records": 595,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05950070363317322,
+        "median": 0.07190000178525224,
+        "p99": 0.3835739991336591,
+        "max": 1.46570000651991
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/3.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 745,
+      "n_records": 345,
+      "n_expected_records": 345,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054606845910620296,
+        "median": 0.0021000014385208488,
+        "p99": 0.44614799495320584,
+        "max": 1.461700005165767
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/1.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1137,
+      "n_records": 737,
+      "n_expected_records": 737,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.09318293744998983,
+        "median": 0.07449999975506216,
+        "p99": 0.6537239992758346,
+        "max": 4.443899997568224
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/3.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1191,
+      "n_records": 791,
+      "n_expected_records": 791,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05752577669481613,
+        "median": 0.07229999755509198,
+        "p99": 0.2843999973265453,
+        "max": 0.6781999982194975
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/4.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1155,
+      "n_records": 755,
+      "n_expected_records": 755,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05266138543833442,
+        "median": 0.07190000178525224,
+        "p99": 0.16156800062162804,
+        "max": 1.4768999972147867
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/5.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05455283348152411,
+        "median": 0.0718000010238029,
+        "p99": 0.24020600161747993,
+        "max": 0.6682000021100976
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/6.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1090,
+      "n_records": 690,
+      "n_expected_records": 690,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054046054940228565,
+        "median": 0.07160000313888304,
+        "p99": 0.22560999997949682,
+        "max": 1.5034999960334972
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/7.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05364795112156219,
+        "median": 0.0718000010238029,
+        "p99": 0.20756600089953234,
+        "max": 1.2018999987049028
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/8.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055260139936387905,
+        "median": 0.07229999755509198,
+        "p99": 0.29482100086170215,
+        "max": 0.7782000029692426
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/9.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1327,
+      "n_records": 927,
+      "n_expected_records": 927,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.057215297588920286,
+        "median": 0.07200000254670158,
+        "p99": 0.21901599859120333,
+        "max": 0.8286999945994467
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/10.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1190,
+      "n_records": 790,
+      "n_expected_records": 790,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05554100845846496,
+        "median": 0.07219999679364264,
+        "p99": 0.16937299864366606,
+        "max": 1.67420000070706
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/11.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1048,
+      "n_records": 648,
+      "n_expected_records": 648,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05242366423494474,
+        "median": 0.0718000010238029,
+        "p99": 0.23718599550193104,
+        "max": 0.6088000009185635
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/12.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 923,
+      "n_records": 523,
+      "n_expected_records": 523,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.049638894966711165,
+        "median": 0.07140000525396317,
+        "p99": 0.21040200284915014,
+        "max": 1.7363999941153452
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/13.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 905,
+      "n_records": 505,
+      "n_expected_records": 505,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.049260331538714244,
+        "median": 0.0718000010238029,
+        "p99": 0.3302520012948667,
+        "max": 0.502200004120823
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/14.csv",
+      "loop": 5
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05682414985408417,
+        "median": 0.07200000254670158,
+        "p99": 0.25013399776071304,
+        "max": 1.0363999972469173
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/0.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1145,
+      "n_records": 745,
+      "n_expected_records": 745,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05256192141398584,
+        "median": 0.07170000026235357,
+        "p99": 0.18850399996153938,
+        "max": 0.91229999816278
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/1.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1075,
+      "n_records": 675,
+      "n_expected_records": 675,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0527448373979369,
+        "median": 0.07190000178525224,
+        "p99": 0.23943800042616203,
+        "max": 0.4430999979376793
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/2.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054610540163964896,
+        "median": 0.0718000010238029,
+        "p99": 0.20915299915941432,
+        "max": 1.2849999984609894
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/3.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1095,
+      "n_records": 695,
+      "n_expected_records": 695,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05348894967576361,
+        "median": 0.07170000026235357,
+        "p99": 0.2518119990418194,
+        "max": 0.4017000028397888
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/4.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.13237461003264456,
+        "median": 0.07199999527074397,
+        "p99": 0.2929990016127704,
+        "max": 33.835000002000015
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/5.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05467824964589186,
+        "median": 0.07229999755509198,
+        "p99": 0.2500990006956275,
+        "max": 0.4845000003115274
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/6.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1094,
+      "n_records": 694,
+      "n_expected_records": 694,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05552559412558907,
+        "median": 0.0718000010238029,
+        "p99": 0.3109629957907574,
+        "max": 0.83969999832334
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/7.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.052902185206431356,
+        "median": 0.07170000026235357,
+        "p99": 0.14652500147349184,
+        "max": 2.1590999967884272
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/8.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05497212550708925,
+        "median": 0.0718000010238029,
+        "p99": 0.24616499722469598,
+        "max": 1.3109000065014698
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/9.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1146,
+      "n_records": 746,
+      "n_expected_records": 746,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05745296688915156,
+        "median": 0.07190000178525224,
+        "p99": 0.27943500172113983,
+        "max": 0.9497999999439344
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/10.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1141,
+      "n_records": 741,
+      "n_expected_records": 741,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0559011393317081,
+        "median": 0.07170000026235357,
+        "p99": 0.2787599994917393,
+        "max": 0.7847000015317462
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/11.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05280157896330613,
+        "median": 0.07159999950090423,
+        "p99": 0.19462100295640933,
+        "max": 0.5690999969374388
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/12.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05444140329736432,
+        "median": 0.07199999527074397,
+        "p99": 0.27154899689776346,
+        "max": 0.39600000309292227
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/13.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1139,
+      "n_records": 739,
+      "n_expected_records": 739,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05547225649729845,
+        "median": 0.0718000010238029,
+        "p99": 0.27750399502110623,
+        "max": 0.6298000007518567
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/14.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1150,
+      "n_records": 750,
+      "n_expected_records": 750,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056427999895632915,
+        "median": 0.0720999960321933,
+        "p99": 0.26572599963401433,
+        "max": 1.0403999986010604
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/15.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1125,
+      "n_records": 725,
+      "n_expected_records": 725,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05367066662680978,
+        "median": 0.07170000026235357,
+        "p99": 0.21886799804633478,
+        "max": 0.9808999966480769
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/0.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1063,
+      "n_records": 663,
+      "n_expected_records": 663,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05170912522228386,
+        "median": 0.07159999950090423,
+        "p99": 0.18052600120427054,
+        "max": 1.957399996172171
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/1.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1129,
+      "n_records": 729,
+      "n_expected_records": 729,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05522347186201032,
+        "median": 0.07159999950090423,
+        "p99": 0.2271120017394424,
+        "max": 0.8637999999336898
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/2.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 995,
+      "n_records": 595,
+      "n_expected_records": 595,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05242954785309629,
+        "median": 0.07159999950090423,
+        "p99": 0.2794160012854261,
+        "max": 1.0925000024144538
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/3.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 745,
+      "n_records": 345,
+      "n_expected_records": 345,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.043618792170680584,
+        "median": 0.0021999949240125716,
+        "p99": 0.38556799932848607,
+        "max": 0.8467000006930903
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/1.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1137,
+      "n_records": 737,
+      "n_expected_records": 737,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.058254881315248655,
+        "median": 0.0718000010238029,
+        "p99": 0.3112719999626311,
+        "max": 1.7517999949632213
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/3.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1191,
+      "n_records": 791,
+      "n_expected_records": 791,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.12300377825038909,
+        "median": 0.07509999704780057,
+        "p99": 0.3881000004184871,
+        "max": 33.22460000345018
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/4.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1155,
+      "n_records": 755,
+      "n_expected_records": 755,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055926580097197726,
+        "median": 0.0720999960321933,
+        "p99": 0.2790619981533384,
+        "max": 1.1677000002237037
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/5.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05465536183579569,
+        "median": 0.07200000254670158,
+        "p99": 0.2423760035890153,
+        "max": 0.6014000027789734
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/6.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1090,
+      "n_records": 690,
+      "n_expected_records": 690,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054160642074239485,
+        "median": 0.07189999450929463,
+        "p99": 0.24778400475042828,
+        "max": 0.39489999471697956
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/7.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05508387097341854,
+        "median": 0.07189999450929463,
+        "p99": 0.2661679995071607,
+        "max": 0.8276999942609109
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/8.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05561302474564978,
+        "median": 0.07199999527074397,
+        "p99": 0.26455400111444743,
+        "max": 0.8075000005192123
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/9.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1327,
+      "n_records": 927,
+      "n_expected_records": 927,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05806495856565473,
+        "median": 0.07189999450929463,
+        "p99": 0.23035199948935778,
+        "max": 0.7479999985662289
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/10.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1190,
+      "n_records": 790,
+      "n_expected_records": 790,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05617907559137181,
+        "median": 0.07170000026235357,
+        "p99": 0.2209160038910335,
+        "max": 1.8712999954004772
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/11.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1048,
+      "n_records": 648,
+      "n_expected_records": 648,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056088454126605215,
+        "median": 0.0718000010238029,
+        "p99": 0.2375860011670734,
+        "max": 1.0524999961489812
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/12.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 923,
+      "n_records": 523,
+      "n_expected_records": 523,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.049426652169342424,
+        "median": 0.07159999950090423,
+        "p99": 0.24555600059102276,
+        "max": 0.9720000016386621
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/13.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 905,
+      "n_records": 505,
+      "n_expected_records": 505,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0512744752704346,
+        "median": 0.07179999374784529,
+        "p99": 0.25980799866374665,
+        "max": 1.221300000906922
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/14.csv",
+      "loop": 6
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05445972106642997,
+        "median": 0.07190000178525224,
+        "p99": 0.24021999837714236,
+        "max": 0.5514000004041009
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/0.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1145,
+      "n_records": 745,
+      "n_expected_records": 745,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055053275019819055,
+        "median": 0.07190000178525224,
+        "p99": 0.26423600385896856,
+        "max": 0.3859999997075647
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/1.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1075,
+      "n_records": 675,
+      "n_expected_records": 675,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053725767566627544,
+        "median": 0.07159999950090423,
+        "p99": 0.24181800225051098,
+        "max": 0.7399999958579428
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/2.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054163501797915674,
+        "median": 0.07190000178525224,
+        "p99": 0.25741800411196863,
+        "max": 0.6205999961821362
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/3.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1095,
+      "n_records": 695,
+      "n_expected_records": 695,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05531552501929686,
+        "median": 0.07210000330815092,
+        "p99": 0.23708399778115527,
+        "max": 0.7594999988214113
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/4.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05681975735837684,
+        "median": 0.07199999527074397,
+        "p99": 0.2381979990605033,
+        "max": 1.6638000015518628
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/5.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.113429029692746,
+        "median": 0.11300000187475234,
+        "p99": 0.33077799911552597,
+        "max": 32.53260000201408
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/6.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1094,
+      "n_records": 694,
+      "n_expected_records": 694,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.07210740397461449,
+        "median": 0.07500000356230885,
+        "p99": 0.3398090003611256,
+        "max": 1.083199997083284
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/7.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06862709791663305,
+        "median": 0.0777000022935681,
+        "p99": 0.41571800364181355,
+        "max": 0.8885999995982274
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/8.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05766637644098539,
+        "median": 0.07229999755509198,
+        "p99": 0.3219579990400229,
+        "max": 0.8526000019628555
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/9.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1146,
+      "n_records": 746,
+      "n_expected_records": 746,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.062224956298253885,
+        "median": 0.07219999679364264,
+        "p99": 0.26379499759059366,
+        "max": 2.7072000011685304
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/10.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1141,
+      "n_records": 741,
+      "n_expected_records": 741,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0569522350156328,
+        "median": 0.07200000254670158,
+        "p99": 0.3082399984123183,
+        "max": 0.6213000015122816
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/11.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054845000008833925,
+        "median": 0.07170000026235357,
+        "p99": 0.2537250022578516,
+        "max": 0.9344999998575076
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/12.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05647578950549615,
+        "median": 0.07189999450929463,
+        "p99": 0.2853999976650812,
+        "max": 0.5031999971834011
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/13.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1139,
+      "n_records": 739,
+      "n_expected_records": 739,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05395179994128762,
+        "median": 0.0718000010238029,
+        "p99": 0.24203599590691707,
+        "max": 0.810900004580617
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/14.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1150,
+      "n_records": 750,
+      "n_expected_records": 750,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053667043406597295,
+        "median": 0.07159999950090423,
+        "p99": 0.25220199953764677,
+        "max": 0.6484000041382387
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/15.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1125,
+      "n_records": 725,
+      "n_expected_records": 725,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05440408905269578,
+        "median": 0.0718000010238029,
+        "p99": 0.29818800307111804,
+        "max": 0.9986000004573725
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/0.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1063,
+      "n_records": 663,
+      "n_expected_records": 663,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053161994215643764,
+        "median": 0.07170000026235357,
+        "p99": 0.2876539972203308,
+        "max": 1.119799999287352
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/1.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1129,
+      "n_records": 729,
+      "n_expected_records": 729,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.057262887361723816,
+        "median": 0.07159999950090423,
+        "p99": 0.25008800002979115,
+        "max": 1.643399999011308
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/2.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 995,
+      "n_records": 595,
+      "n_expected_records": 595,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05188864319709284,
+        "median": 0.07159999950090423,
+        "p99": 0.2691200040862886,
+        "max": 1.1634000038611703
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/3.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 745,
+      "n_records": 345,
+      "n_expected_records": 345,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.04323825489959348,
+        "median": 0.0021000014385208488,
+        "p99": 0.2610279963118941,
+        "max": 0.698800002282951
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/1.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1137,
+      "n_records": 737,
+      "n_expected_records": 737,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05813131041227076,
+        "median": 0.07170000026235357,
+        "p99": 0.2921679962310035,
+        "max": 0.7798000006005168
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/3.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1191,
+      "n_records": 791,
+      "n_expected_records": 791,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0694826197155867,
+        "median": 0.07300000288523734,
+        "p99": 0.3860599994368385,
+        "max": 1.146599999628961
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/4.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1155,
+      "n_records": 755,
+      "n_expected_records": 755,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.13007194807176434,
+        "median": 0.07239999831654131,
+        "p99": 0.23080600061803128,
+        "max": 36.156099995423574
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/5.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05492074972551654,
+        "median": 0.07189999450929463,
+        "p99": 0.23413600560161218,
+        "max": 0.9570000038365833
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/6.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1090,
+      "n_records": 690,
+      "n_expected_records": 690,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06200880734885428,
+        "median": 0.07215000005089678,
+        "p99": 0.35358499786525466,
+        "max": 0.680000004649628
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/7.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05738814299354336,
+        "median": 0.07190000178525224,
+        "p99": 0.2594319979834834,
+        "max": 1.1307999957352877
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/8.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05558426541652184,
+        "median": 0.07190000178525224,
+        "p99": 0.2649950003251431,
+        "max": 0.7962000017869286
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/9.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1327,
+      "n_records": 927,
+      "n_expected_records": 927,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.057644913376464435,
+        "median": 0.07159999950090423,
+        "p99": 0.2448799984995276,
+        "max": 0.706200000422541
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/10.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1190,
+      "n_records": 790,
+      "n_expected_records": 790,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.061917563081286583,
+        "median": 0.07210000330815092,
+        "p99": 0.27040400156693,
+        "max": 1.0565999982645735
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/11.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1048,
+      "n_records": 648,
+      "n_expected_records": 648,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06108311070503626,
+        "median": 0.07200000254670158,
+        "p99": 0.34494999774324175,
+        "max": 1.5330000023823231
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/12.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 923,
+      "n_records": 523,
+      "n_expected_records": 523,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05016294685442138,
+        "median": 0.07159999950090423,
+        "p99": 0.22929200364160335,
+        "max": 0.8306000017910264
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/13.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 905,
+      "n_records": 505,
+      "n_expected_records": 505,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05131933675083275,
+        "median": 0.07110000296961516,
+        "p99": 0.32425999670522393,
+        "max": 1.4345000017783605
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/14.csv",
+      "loop": 7
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05443356587647346,
+        "median": 0.0718000010238029,
+        "p99": 0.235934004303999,
+        "max": 0.5241000035312027
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/0.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1145,
+      "n_records": 745,
+      "n_expected_records": 745,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053842183315361884,
+        "median": 0.07170000026235357,
+        "p99": 0.2302199992118398,
+        "max": 0.7200999971246347
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/1.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1075,
+      "n_records": 675,
+      "n_expected_records": 675,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0523736743462207,
+        "median": 0.0714999987394549,
+        "p99": 0.23928199778310935,
+        "max": 1.0836000001290813
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/2.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05429181170694243,
+        "median": 0.0719499985279981,
+        "p99": 0.25100099723204033,
+        "max": 0.3848999986075796
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/3.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1095,
+      "n_records": 695,
+      "n_expected_records": 695,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05276447483503204,
+        "median": 0.0718000010238029,
+        "p99": 0.23185800251667366,
+        "max": 0.8103000000119209
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/4.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05699757369208122,
+        "median": 0.07170000026235357,
+        "p99": 0.22798999882070367,
+        "max": 1.5112999972188845
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/5.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05389852695066387,
+        "median": 0.0718000010238029,
+        "p99": 0.22110699734184913,
+        "max": 0.9301000027335249
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/6.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1094,
+      "n_records": 694,
+      "n_expected_records": 694,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.09424625231637117,
+        "median": 0.07199999527074397,
+        "p99": 0.3991290020348967,
+        "max": 34.07639999932144
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/7.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05799676578103604,
+        "median": 0.07219999679364264,
+        "p99": 0.2733620006620181,
+        "max": 1.3498999978764914
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/8.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055943031363632975,
+        "median": 0.07189999450929463,
+        "p99": 0.30440099981206,
+        "max": 0.738800001272466
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/9.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1146,
+      "n_records": 746,
+      "n_expected_records": 746,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05354031402836911,
+        "median": 0.07199999527074397,
+        "p99": 0.24377999652642704,
+        "max": 0.47669999912614003
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/10.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1141,
+      "n_records": 741,
+      "n_expected_records": 741,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05560148987710136,
+        "median": 0.07170000026235357,
+        "p99": 0.2770599967334408,
+        "max": 0.4945999971823767
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/11.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05492368423131809,
+        "median": 0.07199999527074397,
+        "p99": 0.329722001843036,
+        "max": 0.55669999710517
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/12.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05792438597908538,
+        "median": 0.0718000010238029,
+        "p99": 0.25605200098652825,
+        "max": 1.5882999941823073
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/13.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1139,
+      "n_records": 739,
+      "n_expected_records": 739,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054452151046152926,
+        "median": 0.07170000026235357,
+        "p99": 0.26254799828166137,
+        "max": 0.7188999952632003
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/14.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1150,
+      "n_records": 750,
+      "n_expected_records": 750,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.060406086875287736,
+        "median": 0.07200000254670158,
+        "p99": 0.3538450026826459,
+        "max": 0.9898999996948987
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/15.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1125,
+      "n_records": 725,
+      "n_expected_records": 725,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05361262227072277,
+        "median": 0.0718000010238029,
+        "p99": 0.2258399987476878,
+        "max": 0.6696999989799224
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/0.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1063,
+      "n_records": 663,
+      "n_expected_records": 663,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.051163499613885215,
+        "median": 0.0714999987394549,
+        "p99": 0.2164879986958086,
+        "max": 0.8405999979004264
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/1.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1129,
+      "n_records": 729,
+      "n_expected_records": 729,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05367068208088361,
+        "median": 0.07200000254670158,
+        "p99": 0.25430799636524204,
+        "max": 0.4456000024219975
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/2.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 995,
+      "n_records": 595,
+      "n_expected_records": 595,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056508040329413346,
+        "median": 0.07170000026235357,
+        "p99": 0.3216380014782751,
+        "max": 0.7239999977173284
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/3.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 745,
+      "n_records": 345,
+      "n_expected_records": 345,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.041956107613424325,
+        "median": 0.0021999949240125716,
+        "p99": 0.26678000023821313,
+        "max": 0.9210999996867031
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/1.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1137,
+      "n_records": 737,
+      "n_expected_records": 737,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055209146791312634,
+        "median": 0.07190000178525224,
+        "p99": 0.24504799919668618,
+        "max": 0.5848000000696629
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/3.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1191,
+      "n_records": 791,
+      "n_expected_records": 791,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.052374307366575196,
+        "median": 0.07200000254670158,
+        "p99": 0.14477000004262622,
+        "max": 0.5935000008321367
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/4.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1155,
+      "n_records": 755,
+      "n_expected_records": 755,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.057948657969926036,
+        "median": 0.07190000178525224,
+        "p99": 0.3139379962522075,
+        "max": 1.9699999975273386
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/5.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06168500414784387,
+        "median": 0.07200000254670158,
+        "p99": 0.23588600117363945,
+        "max": 1.6480999984196387
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/6.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1090,
+      "n_records": 690,
+      "n_expected_records": 690,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05552752305664883,
+        "median": 0.07220000406960025,
+        "p99": 0.21787900019262363,
+        "max": 0.6886999981361441
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/7.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0571264167945124,
+        "median": 0.0720999960321933,
+        "p99": 0.29939599786302995,
+        "max": 0.8236000066972338
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/8.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05336931810704739,
+        "median": 0.07170000026235357,
+        "p99": 0.22840299927338442,
+        "max": 0.9701999952085316
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/9.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1327,
+      "n_records": 927,
+      "n_expected_records": 927,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.059949962348823195,
+        "median": 0.07200000254670158,
+        "p99": 0.25328400253783934,
+        "max": 0.9431999933440238
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/10.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1190,
+      "n_records": 790,
+      "n_expected_records": 790,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05543873944474353,
+        "median": 0.07199999527074397,
+        "p99": 0.27925900270929493,
+        "max": 0.40300000546267256
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/11.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1048,
+      "n_records": 648,
+      "n_expected_records": 648,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05274589679147053,
+        "median": 0.07190000178525224,
+        "p99": 0.23401500184263554,
+        "max": 0.8431000023847446
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/12.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 923,
+      "n_records": 523,
+      "n_expected_records": 523,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06145135418216537,
+        "median": 0.07210000330815092,
+        "p99": 0.3010520002862902,
+        "max": 0.8034000056795776
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/13.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 905,
+      "n_records": 505,
+      "n_expected_records": 505,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05504563548898026,
+        "median": 0.07170000026235357,
+        "p99": 0.33088400203268975,
+        "max": 0.69449999864446
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/14.csv",
+      "loop": 8
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.056861028682770175,
+        "median": 0.07229999755509198,
+        "p99": 0.3154699993319807,
+        "max": 0.5674999993061647
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/0.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1145,
+      "n_records": 745,
+      "n_expected_records": 745,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05111685590172902,
+        "median": 0.0718000010238029,
+        "p99": 0.18359999521635445,
+        "max": 0.47420000191777945
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/1.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1075,
+      "n_records": 675,
+      "n_expected_records": 675,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.052979255933043826,
+        "median": 0.07189999450929463,
+        "p99": 0.2491479978198185,
+        "max": 0.418399999034591
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/2.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05986724736367536,
+        "median": 0.0720999960321933,
+        "p99": 0.3999310008657627,
+        "max": 1.0034999941126443
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/3.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1095,
+      "n_records": 695,
+      "n_expected_records": 695,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05601205456800989,
+        "median": 0.0718000010238029,
+        "p99": 0.31718399943201714,
+        "max": 0.8671999967191368
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/4.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05448899488262404,
+        "median": 0.07199999527074397,
+        "p99": 0.25975499673222674,
+        "max": 0.4808999947272241
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/5.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1154,
+      "n_records": 754,
+      "n_expected_records": 754,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05531239162061599,
+        "median": 0.07190000178525224,
+        "p99": 0.266686999893864,
+        "max": 0.9290999951190315
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/6.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1094,
+      "n_records": 694,
+      "n_expected_records": 694,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054014076927467805,
+        "median": 0.07199999527074397,
+        "p99": 0.15777600405272052,
+        "max": 1.8181999985245056
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/7.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.06220690558709886,
+        "median": 0.07220000406960025,
+        "p99": 0.27491699911479256,
+        "max": 0.8125999956973828
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/8.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1148,
+      "n_records": 748,
+      "n_expected_records": 748,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.07244651561776559,
+        "median": 0.0720999960321933,
+        "p99": 0.270238998564309,
+        "max": 4.719099997601006
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/9.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1146,
+      "n_records": 746,
+      "n_expected_records": 746,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.054849912731438535,
+        "median": 0.0720999960321933,
+        "p99": 0.24789500057522515,
+        "max": 0.6071999960113317
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/10.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1141,
+      "n_records": 741,
+      "n_expected_records": 741,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05799649457708834,
+        "median": 0.0718000010238029,
+        "p99": 0.329060002695766,
+        "max": 1.8214000010630116
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/11.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.053582280943693036,
+        "median": 0.07200000254670158,
+        "p99": 0.23765700199874082,
+        "max": 0.4476999965845607
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/12.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1140,
+      "n_records": 740,
+      "n_expected_records": 740,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055564122821874264,
+        "median": 0.07170000026235357,
+        "p99": 0.27466400089906406,
+        "max": 0.9816000019782223
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/13.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1139,
+      "n_records": 739,
+      "n_expected_records": 739,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05534222996043478,
+        "median": 0.07170000026235357,
+        "p99": 0.260825996374475,
+        "max": 1.1127999969176017
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/14.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1150,
+      "n_records": 750,
+      "n_expected_records": 750,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055569912959902504,
+        "median": 0.07210000330815092,
+        "p99": 0.2842600023723206,
+        "max": 0.611299998126924
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve1/15.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1125,
+      "n_records": 725,
+      "n_expected_records": 725,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05768622205101161,
+        "median": 0.07190000178525224,
+        "p99": 0.36910399678163214,
+        "max": 0.8773000008659437
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/0.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1063,
+      "n_records": 663,
+      "n_expected_records": 663,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05286415807901937,
+        "median": 0.07170000026235357,
+        "p99": 0.29033200335106796,
+        "max": 0.4059999992023222
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/1.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1129,
+      "n_records": 729,
+      "n_expected_records": 729,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.052987422531524685,
+        "median": 0.07190000178525224,
+        "p99": 0.19574800156988234,
+        "max": 1.0052999932668172
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/2.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 995,
+      "n_records": 595,
+      "n_expected_records": 595,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05089155787042805,
+        "median": 0.0718000010238029,
+        "p99": 0.24685000360477646,
+        "max": 0.39680000190855935
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "valve2/3.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 745,
+      "n_records": 345,
+      "n_expected_records": 345,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.045092349089510216,
+        "median": 0.0021000014385208488,
+        "p99": 0.29434399883029616,
+        "max": 0.8350999996764585
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/1.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1137,
+      "n_records": 737,
+      "n_expected_records": 737,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05789234836968956,
+        "median": 0.07200000254670158,
+        "p99": 0.29875999665819425,
+        "max": 1.1004999978467822
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/3.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1191,
+      "n_records": 791,
+      "n_expected_records": 791,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.055469437538734914,
+        "median": 0.07199999527074397,
+        "p99": 0.2372900002228559,
+        "max": 1.083000002836343
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/4.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1155,
+      "n_records": 755,
+      "n_expected_records": 755,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.0545828572529352,
+        "median": 0.07190000178525224,
+        "p99": 0.2550479961792012,
+        "max": 0.39090000063879415
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/5.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05302197022332892,
+        "median": 0.0718000010238029,
+        "p99": 0.18604999888339052,
+        "max": 1.12269999954151
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/6.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1090,
+      "n_records": 690,
+      "n_expected_records": 690,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05405321093799478,
+        "median": 0.0718000010238029,
+        "p99": 0.2704390034341481,
+        "max": 0.6447999985539354
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/7.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1147,
+      "n_records": 747,
+      "n_expected_records": 747,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.1217466434285734,
+        "median": 0.07199999527074397,
+        "p99": 0.21982000194839174,
+        "max": 32.92199999850709
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/8.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1144,
+      "n_records": 744,
+      "n_expected_records": 744,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05655760479556931,
+        "median": 0.07200000254670158,
+        "p99": 0.3050890003942162,
+        "max": 1.6673999998602085
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/9.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1327,
+      "n_records": 927,
+      "n_expected_records": 927,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05550693307313528,
+        "median": 0.07179999374784529,
+        "p99": 0.16840599753777513,
+        "max": 1.0745000035967678
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/10.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1190,
+      "n_records": 790,
+      "n_expected_records": 790,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05731999989307462,
+        "median": 0.07210000330815092,
+        "p99": 0.27257000198005527,
+        "max": 0.7826000000932254
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/11.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 1048,
+      "n_records": 648,
+      "n_expected_records": 648,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.05043396959775563,
+        "median": 0.07159999950090423,
+        "p99": 0.20893400425848035,
+        "max": 0.7334000038099475
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/12.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 923,
+      "n_records": 523,
+      "n_expected_records": 523,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.04872535225478196,
+        "median": 0.07140000525396317,
+        "p99": 0.22123800197732588,
+        "max": 0.7167000003391877
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/13.csv",
+      "loop": 9
+    },
+    {
+      "n_samples": 905,
+      "n_records": 505,
+      "n_expected_records": 505,
+      "missed_windows": 0,
+      "n_deadline_overruns": 0,
+      "max_deadline_overrun_ms": 0.0,
+      "processing_ms": {
+        "mean": 0.04823546953440145,
+        "median": 0.07139999797800556,
+        "p99": 0.27357200277038013,
+        "max": 0.7096000044839457
+      },
+      "memory": {
+        "rss_samples_mb": [],
+        "growth": null
+      },
+      "file": "other/14.csv",
+      "loop": 9
+    }
+  ]
+}

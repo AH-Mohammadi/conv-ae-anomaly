@@ -1,8 +1,10 @@
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import sys
+from pathlib import Path
 
 import numpy as np
 import pytest
@@ -27,7 +29,7 @@ from anomaly_detector.train import run_conv_ae
 
 
 @pytest.fixture(scope="module")
-def bundle(tmp_path_factory):
+def built(tmp_path_factory):
     root = tmp_path_factory.mktemp("skab")
     for sub, seeds in (("valve1", (1, 2)), ("other", (3,))):
         d = root / sub
@@ -46,7 +48,13 @@ def bundle(tmp_path_factory):
     _, model, _ = run_conv_ae(cfg)
     report, blobs, cards = run_compression(cfg, model, model_dir=work / "m_v1")
     save_compression_outputs(report, blobs, cards, cfg, work / "m_v1")
-    return export_bundle(cfg, work / "m_v1", work / "bundle")
+    return {"cfg": cfg, "model_dir": work / "m_v1",
+            "bundle": export_bundle(cfg, work / "m_v1", work / "bundle")}
+
+
+@pytest.fixture(scope="module")
+def bundle(built):
+    return built["bundle"]
 
 
 # ---- pure helpers ------------------------------------------------------------------
@@ -110,6 +118,7 @@ def test_bundle_is_numpy_only(bundle):
     """The bundle's modules must import without pandas/yaml/tensorflow (Pi has none)."""
     code = ("import sys; sys.modules['pandas']=None; sys.modules['yaml']=None; "
             "sys.modules['tensorflow']=None; sys.modules['keras']=None; "
+            "import anomaly_detector.pibench_cli; "
             "import anomaly_detector.pibench as p; print(p.__file__)")
     out = subprocess.run([sys.executable, "-c", code], cwd=bundle, capture_output=True, text=True)
     assert out.returncode == 0, out.stderr
@@ -164,3 +173,36 @@ def test_benchmark_rejects_corrupted_or_unknown(bundle, tmp_path):
         run_benchmark(bad, sustained_seconds=0, cooldown_seconds=0)
     with pytest.raises(ValueError, match="not in bundle"):
         run_benchmark(bundle, variants=["nope"], sustained_seconds=0)
+
+
+def test_bundle_script_runs_from_any_directory(bundle, tmp_path):
+    out = subprocess.run([sys.executable, str(bundle / "benchmark_pi.py"), "--help"],
+                         cwd=tmp_path, capture_output=True, text=True)
+    assert out.returncode == 0, out.stderr
+    assert "--sustained-seconds" in out.stdout
+
+
+def test_export_works_from_a_non_editable_install(built, tmp_path):
+    """Regression: export must not depend on the repository layout (pip install without -e)."""
+    import anomaly_detector
+    import yaml
+
+    site = tmp_path / "site"
+    shutil.copytree(Path(anomaly_detector.__file__).parent, site / "anomaly_detector",
+                    ignore=shutil.ignore_patterns("__pycache__"))
+    cfg_path = tmp_path / "cfg.yaml"
+    cfg_path.write_text(yaml.safe_dump(built["cfg"].to_dict()))
+    code = (
+        "import sys, anomaly_detector\n"
+        "from anomaly_detector.config import load_config\n"
+        "from anomaly_detector.pibundle import export_bundle\n"
+        f"assert anomaly_detector.__file__.startswith({str(site)!r}), anomaly_detector.__file__\n"
+        f"cfg = load_config({str(cfg_path)!r})\n"
+        f"export_bundle(cfg, {str(built['model_dir'])!r}, {str(tmp_path / 'out')!r}, max_windows=200)\n"
+    )
+    env = {**os.environ, "PYTHONPATH": str(site)}
+    out = subprocess.run([sys.executable, "-c", code], cwd=tmp_path, env=env,
+                         capture_output=True, text=True)
+    assert out.returncode == 0, out.stderr[-1500:]
+    assert (tmp_path / "out" / "benchmark_pi.py").exists()
+    assert json.loads((tmp_path / "out" / "manifest.json").read_text())["subsampled"] is True

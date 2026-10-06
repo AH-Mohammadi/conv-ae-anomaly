@@ -23,7 +23,19 @@ from .inference import TFLiteAutoencoder
 from .metrics import compute_metrics
 from .pibench import BUNDLE_SCHEMA, Tolerances
 
-SOURCE_MODULES = ("__init__.py", "inference.py", "metrics.py", "baseline.py", "pibench.py")
+SOURCE_MODULES = ("__init__.py", "inference.py", "metrics.py", "baseline.py", "pibench.py",
+                  "pibench_cli.py")
+
+# Written verbatim into the bundle; no dependency on where the package is installed.
+BUNDLE_SCRIPT = '''"""Run the Pi benchmark on this bundle:  python3 benchmark_pi.py [--help]"""
+from pathlib import Path
+
+from anomaly_detector.pibench_cli import main
+
+if __name__ == "__main__":
+    main(default_bundle=Path(__file__).resolve().parent)
+'''
+
 
 README = """Raspberry Pi benchmark bundle
 =============================
@@ -89,10 +101,7 @@ def export_bundle(cfg: Config, model_dir: str | Path, out_dir: str | Path,
     pkg_out.mkdir(exist_ok=True)
     for f in SOURCE_MODULES:
         shutil.copyfile(pkg / f, pkg_out / f)
-    script = pkg.parents[1] / "scripts" / "benchmark_pi.py"
-    if not script.exists():
-        raise FileNotFoundError(f"{script} not found; run from the repository checkout")
-    shutil.copyfile(script, out / "benchmark_pi.py")
+    (out / "benchmark_pi.py").write_text(BUNDLE_SCRIPT, encoding="utf-8")
     (out / "README.txt").write_text(README, encoding="utf-8")
 
     manifest = {

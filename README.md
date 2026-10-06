@@ -5,7 +5,8 @@ Work in progress, built iteration by iteration.
 - **Iteration 1:** data pipeline, reference-only normalization, windowing, z-score baseline, F1/FAR/MAR harness.
 - **Iteration 2:** offline Conv1D autoencoder trained on anomaly-free reference windows, scored by the same harness.
 - **Iteration 3:** TFLite conversion (FP32 and full-integer INT8), compared against the FP32 Keras model.
-- **Iteration 4:** Raspberry Pi batch benchmark (latency, memory, CPU, thermals, desktop-vs-device agreement).
+- **Iteration 4:** Raspberry Pi batch benchmark (latency, memory, CPU, thermals, desktop-vs-device agreement). Recommendation: deploy `fp32_tflite` (see report).
+- **Iteration 5:** streaming inference (ring buffer, startup handling, real-time replay, stability checks).
 
 ## Setup
 
@@ -79,3 +80,29 @@ python3 benchmark_pi.py                                # writes pi_benchmark_rep
 - The report records the device model, OS/kernel, runtime package versions, XNNPACK presence in the runtime log,
   temperature/frequency/throttle flags and a sustained-run drift check. `is_raspberry_pi` is false on any other machine.
 - Benchmark results from a non-Pi machine must not be reported as Pi results.
+
+## Streaming inference (Iteration 5)
+
+```bash
+python scripts/replay_stream.py --speed 0                        # as fast as possible, all files once
+python scripts/replay_stream.py --files valve1/0.csv --speed 1    # one file, real time
+python scripts/replay_stream.py --loops 10 --speed 0              # soak test
+```
+
+- `StreamingDetector` (`stream.py`) takes samples one at a time: the first `reference_rows` fit the
+  per-episode normalizer (no score emitted), then every sample is windowed through a `RingBuffer`
+  (`ringbuffer.py`, no reallocation after construction) and scored. One `StreamingDetector` per SKAB
+  file (a fresh reference/normalizer per "episode"), matching the offline per-file protocol exactly.
+- **Verified exact parity with the offline harness**: streamed one-file-at-a-time, the detector
+  reproduces the SAME scores, predictions and labels as `evaluate.py`/`compress.py` to float tolerance
+  (test, and confirmed on real SKAB: 23,421 pooled points, F1 0.7884/FAR 0.3650/MAR 0.1482, identical
+  streamed vs offline).
+- `replay.py` paces samples using SKAB's real recorded timestamps (mostly 1s, some 2s, a few large gaps
+  from concatenated recording sessions), scaled by `--speed`; `0` runs as fast as possible. It tracks
+  deadline overruns (processing slower than the inter-arrival gap) and periodic RSS for a growth check.
+- 10-loop soak test (330 episodes, 234,210 scored windows, sandbox): 0 missed windows, 0 deadline
+  overruns, RSS 495.6 -> 501.3 MB (sandbox runs full TensorFlow; a Pi deployment with ai-edge-litert
+  would start much smaller). The deployed variant is `fp32_tflite`, per the Iteration 4 Pi results.
+- Known simplification: offline/streaming parity is exact for `stride=1` (used everywhere in this
+  project); for `stride>1` the streaming stride phase is anchored to the start of scoring rather than
+  to sample 0, which is documented in `stream.py` rather than engineered away.
