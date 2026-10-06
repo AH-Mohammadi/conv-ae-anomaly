@@ -17,7 +17,9 @@ import numpy as np
 import tensorflow as tf
 
 from .baseline import predict
+from .calibration import Calibrator
 from .config import Config
+from .records import config_fingerprint
 from .evaluate import (
     PreparedFile, build_scorecard, load_prepared, score_files, test_windows, write_scorecard,
 )
@@ -100,15 +102,18 @@ def evaluate_variant(
     val_windows: np.ndarray, cfg: Config, excluded: list[str],
     extra_provenance: dict | None = None, extra: dict | None = None,
 ):
-    """Own validation threshold -> shared harness scorecard. Returns (card, results)."""
-    thr, src = resolve_threshold(score_fn(val_windows), cfg)
+    """Own validation threshold + calibration -> shared harness scorecard. Returns (card, results)."""
+    val_scores = score_fn(val_windows)
+    thr, src = resolve_threshold(val_scores, cfg)
+    calib = Calibrator.fit(val_scores, thr)
     results = score_files(prepared, cfg, score_fn)
     card = build_scorecard(
         results, cfg, threshold=thr, threshold_source=src, excluded=excluded,
         model_name=f"conv_ae_{name}", extra_provenance=extra_provenance,
-        extra={"variant": name, **(extra or {})},
+        extra={"variant": name, "calibration": calib.to_dict(),
+              "config_version": config_fingerprint({"threshold": thr}), **(extra or {})},
     )
-    return card, results
+    return card, results, calib
 
 
 def _summary(card: dict, size_bytes: int | None) -> dict:
@@ -150,9 +155,9 @@ def run_compression(cfg: Config, model: keras.Model | None = None,
     versions = {"tensorflow": tf.__version__, "keras": keras.__version__,
                 "tflite_backend": det["fp32_tflite"].backend}
 
-    cards, results = {}, {}
+    cards, results, calibrators = {}, {}, {}
     for name, fn in score_fns.items():
-        cards[name], results[name] = evaluate_variant(
+        cards[name], results[name], calibrators[name] = evaluate_variant(
             name, fn, prepared, val_w, cfg, excluded, versions, {"model_version": model_dir.name})
 
     y_true = np.concatenate([r.y_true for r in results["fp32_keras"]])
@@ -209,7 +214,7 @@ def run_compression(cfg: Config, model: keras.Model | None = None,
                               + "; otherwise fp32_tflite",
             "selected": selected,
         },
-        "calibration": {
+        "quantization_calibration": {
             "standard": {"n_samples": int(rep.shape[0]),
                          "source": "random anomaly-free training windows (seeded)"},
             "wide": {"n_samples": int(wide.shape[0]),
@@ -220,6 +225,9 @@ def run_compression(cfg: Config, model: keras.Model | None = None,
                              "numbers carry mild selection bias."},
         },
         "tflite": {k: {"ops": tflite_op_names(blobs[k]), **det[k].describe()} for k in blobs},
+        "score_calibration": {k: {"calibration": cards[k]["calibration"],
+                                  "config_version": cards[k]["config_version"]}
+                             for k in cards},
         "n_files": cards["fp32_keras"]["n_files"],
         "protocol": cards["fp32_keras"]["protocol"],
         "config": cfg.to_dict(),
@@ -246,7 +254,10 @@ def save_compression_outputs(report: dict, blobs: dict, cards: dict, cfg: Config
         "window_size": cfg.windowing.window_size,
         "variants": {
             k: {"file": out[k].name, "threshold": report["variants"][k]["threshold"],
-                "size_bytes": report["variants"][k]["size_bytes"], **report["tflite"][k]}
+                "size_bytes": report["variants"][k]["size_bytes"],
+                "calibration": report["score_calibration"][k]["calibration"],
+                "config_version": report["score_calibration"][k]["config_version"],
+                **report["tflite"][k]}
             for k in blobs
         },
     }

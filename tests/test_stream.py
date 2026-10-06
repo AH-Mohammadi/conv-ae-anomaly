@@ -111,3 +111,33 @@ def test_matches_offline_harness(synthetic_root):
     assert np.array_equal(stream_pred, offline_pred)
     stream_labels = series.labels[[r.sample_index for r in records]]
     assert np.array_equal(stream_labels, y_true)
+
+
+def test_streaming_with_calibrator_matches_raw_decision_and_is_bounded():
+    from anomaly_detector.calibration import Calibrator
+    rng = np.random.default_rng(7)
+    val = np.abs(rng.standard_normal(500)).astype(np.float64) + 0.1
+    threshold = float(np.percentile(val, 99))
+    cal = Calibrator.fit(val, threshold)
+
+    det = _detector(reference_rows=20, window_size=8, threshold=threshold)
+    det.calibrator = cal
+    records = []
+    for _ in range(500):
+        rec = det.process_sample(rng.standard_normal(C))
+        if rec is not None:
+            records.append(rec)
+    assert records  # some were emitted
+    for r in records:
+        assert r.calibrated_score is not None
+        assert 0.0 <= r.calibrated_score <= 1.0
+        assert (r.calibrated_score > 0.5) == r.is_anomaly
+
+
+def test_streaming_without_calibrator_leaves_calibrated_score_none():
+    det = _detector()
+    rng = np.random.default_rng(8)
+    rec = None
+    for _ in range(21):
+        rec = det.process_sample(rng.standard_normal(C))
+    assert rec.calibrated_score is None

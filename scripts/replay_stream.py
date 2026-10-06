@@ -1,6 +1,6 @@
-"""Replay SKAB files through the streaming detector; write per-window scores and a
-stability summary. One StreamingDetector per file (fresh reference/normalizer per
-episode), matching the offline per-file normalization protocol.
+"""Replay SKAB files through the streaming detector; write versioned structured output
+records (JSONL) and a stability summary. One StreamingDetector per file (fresh
+reference/normalizer per episode), matching the offline per-file normalization protocol.
 
 Examples:
   python scripts/replay_stream.py --speed 0                      # as fast as possible (default)
@@ -15,9 +15,11 @@ from pathlib import Path
 
 import numpy as np
 
+from anomaly_detector.calibration import Calibrator
 from anomaly_detector.config import load_config
 from anomaly_detector.data import check_reference_segment, discover_files, file_key, load_series
 from anomaly_detector.inference import TFLiteAutoencoder
+from anomaly_detector.records import build_output_record
 from anomaly_detector.replay import REPLAY_SCHEMA, replay_samples
 from anomaly_detector.stream import StreamingDetector
 
@@ -41,6 +43,9 @@ def main() -> None:
     meta = json.loads((model_dir / "tflite_meta.json").read_text(encoding="utf-8"))
     v = meta["variants"][a.variant]
     det_backend = TFLiteAutoencoder(model_path=model_dir / v["file"])
+    calibrator = Calibrator.from_dict(v["calibration"])
+    model_version = f"{meta['model_version']}:{a.variant}"
+    config_version = v["config_version"]
 
     all_files = discover_files(cfg.dataset.root)
     excluded = set(cfg.dataset.exclude_files)
@@ -69,13 +74,13 @@ def main() -> None:
                     reference_rows=cfg.dataset.reference_rows, threshold=v["threshold"],
                     stride=cfg.windowing.stride,
                     normalization_method=cfg.preprocessing.normalization_method,
+                    calibrator=calibrator,
                 )
 
-                def cb(rec, name=file_key(path), labels=series.labels):
-                    row = {"file": name, "sample_index": rec.sample_index, "score": rec.score,
-                           "threshold": rec.threshold, "is_anomaly": rec.is_anomaly,
-                           "label": int(labels[rec.sample_index]), "processing_ns": rec.processing_ns}
-                    out_fh.write(json.dumps(row) + "\n")
+                def cb(rec, name=file_key(path)):
+                    out = build_output_record(rec, model_version=model_version,
+                                              config_version=config_version, file=name)
+                    out_fh.write(out.to_json() + "\n")
 
                 _, stats = replay_samples(series.values, det, gaps_s=gaps, speed=a.speed, record_cb=cb)
                 s = stats.summary()
@@ -90,7 +95,8 @@ def main() -> None:
         out_fh.close()
 
     summary = {
-        "schema_version": REPLAY_SCHEMA, "variant": a.variant, "speed": a.speed, "loops": a.loops,
+        "schema_version": REPLAY_SCHEMA, "variant": a.variant, "model_version": model_version,
+        "config_version": config_version, "speed": a.speed, "loops": a.loops,
         "n_episodes": len(episodes),
         "total_records": sum(e["n_records"] for e in episodes),
         "total_missed_windows": sum(e["missed_windows"] for e in episodes),

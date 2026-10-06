@@ -7,6 +7,7 @@ Work in progress, built iteration by iteration.
 - **Iteration 3:** TFLite conversion (FP32 and full-integer INT8), compared against the FP32 Keras model.
 - **Iteration 4:** Raspberry Pi batch benchmark (latency, memory, CPU, thermals, desktop-vs-device agreement). Recommendation: deploy `fp32_tflite` (see report).
 - **Iteration 5:** streaming inference (ring buffer, startup handling, real-time replay, stability checks).
+- **Iteration 6:** score calibration ([0,1]) and a versioned structured output record.
 
 ## Setup
 
@@ -106,3 +107,30 @@ python scripts/replay_stream.py --loops 10 --speed 0              # soak test
 - Known simplification: offline/streaming parity is exact for `stride=1` (used everywhere in this
   project); for `stride>1` the streaming stride phase is anchored to the start of scoring rather than
   to sample 0, which is documented in `stream.py` rather than engineered away.
+
+## Score calibration and structured output (Iteration 6)
+
+```bash
+python scripts/convert_tflite.py --config configs/conv_ae.yaml   # now also fits+saves calibration per variant
+python scripts/replay_stream.py --speed 0                         # now emits stream_output_record_v1 JSONL
+```
+
+- **Calibration** (`calibration.py`): `score = sigmoid(log((error+eps)/(threshold+eps)) / scale)`, with
+  `scale` fit as the standard deviation of that log-ratio over anomaly-free VALIDATION errors only (no
+  test data). `score(threshold) == 0.5` exactly, so `score > 0.5` reproduces the raw `error > threshold`
+  decision with no change to F1/FAR/MAR (verified bit-for-bit on the real dataset: 23,421/23,421 records
+  agree). Log space was used because test-region errors reach roughly 1000x the threshold on some files
+  (the out-of-distribution-input finding from Iteration 3); a linear scale saturates almost every such
+  point to 1.0 and loses the gradation a severity score should carry.
+- Each TFLite variant gets its own calibration (like its own threshold), stored in `tflite_meta.json`
+  and `compression_report.json` under `score_calibration`.
+- **Structured output** (`records.py`): every streamed detection is a `stream_output_record_v1` JSON
+  object: `schema_version, timestamp, window_id, score (calibrated), raw_error, threshold, is_anomaly,
+  model_version, config_version, processing_ns, stage, file`. This is the project's "Knowledge" payload
+  for a future Coordinator (not implemented here).
+- `model_version` names the deployed artifact including which TFLite variant (e.g.
+  `conv_ae_v1:fp32_tflite`) -- quantization changes the weights/op set, so it is artifact-dependent, same
+  classification as window size or filter count. `config_version` is a short fingerprint of the currently
+  active runtime-adjustable parameters (today: just the threshold); it is the hook Iteration 7's runtime
+  reconfiguration will use to mark records as produced under a new configuration, without a new
+  model_version.
