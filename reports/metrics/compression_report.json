@@ -128,7 +128,7 @@
     "selection_rule": "first passing INT8 variant in order int8_tflite, int8_wide_tflite; otherwise fp32_tflite",
     "selected": "int8_wide_tflite"
   },
-  "calibration": {
+  "quantization_calibration": {
     "standard": {
       "n_samples": 500,
       "source": "random anomaly-free training windows (seeded)"
@@ -232,6 +232,40 @@
       }
     }
   },
+  "score_calibration": {
+    "fp32_keras": {
+      "calibration": {
+        "method": "log_ratio_sigmoid",
+        "center": 0.8980500078201291,
+        "scale": 0.17441963572753538
+      },
+      "config_version": "4e465d8f"
+    },
+    "fp32_tflite": {
+      "calibration": {
+        "method": "log_ratio_sigmoid",
+        "center": 0.8980500556802256,
+        "scale": 0.17441963654509737
+      },
+      "config_version": "056f88ed"
+    },
+    "int8_tflite": {
+      "calibration": {
+        "method": "log_ratio_sigmoid",
+        "center": 0.9413891421406108,
+        "scale": 0.17662995947412835
+      },
+      "config_version": "a1a131b1"
+    },
+    "int8_wide_tflite": {
+      "calibration": {
+        "method": "log_ratio_sigmoid",
+        "center": 0.8967231384288161,
+        "scale": 0.17385402443947576
+      },
+      "config_version": "8448df9b"
+    }
+  },
   "n_files": 33,
   "protocol": {
     "reference": "first 400 rows of each file",
@@ -290,8 +324,8 @@
     "seed": 0
   },
   "provenance": {
-    "created_utc": "2026-10-04T16:05:11+00:00",
-    "git_commit": "c15649878930ca20a3710984624e0d6a0534f185",
+    "created_utc": "2026-10-06T15:40:09+00:00",
+    "git_commit": "6bc7fb0accd22cff675a016d28de16000b9c20dd",
     "skab_commit": "b2c0d46c2971dcbfe71e26087b6d231998bb91c2",
     "python": "3.10.11",
     "numpy": "2.2.6",

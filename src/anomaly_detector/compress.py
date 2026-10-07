@@ -111,7 +111,9 @@ def evaluate_variant(
         results, cfg, threshold=thr, threshold_source=src, excluded=excluded,
         model_name=f"conv_ae_{name}", extra_provenance=extra_provenance,
         extra={"variant": name, "calibration": calib.to_dict(),
-              "config_version": config_fingerprint({"threshold": thr}), **(extra or {})},
+              "config_version": config_fingerprint(
+                  {"threshold": thr, "calibration_scale": calib.params.scale}),
+              **(extra or {})},
     )
     return card, results, calib
 

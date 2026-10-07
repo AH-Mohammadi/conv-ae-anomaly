@@ -72,8 +72,8 @@
   },
   "n_files": 33,
   "provenance": {
-    "created_utc": "2026-10-04T16:05:14+00:00",
-    "git_commit": "c15649878930ca20a3710984624e0d6a0534f185",
+    "created_utc": "2026-10-06T15:40:12+00:00",
+    "git_commit": "6bc7fb0accd22cff675a016d28de16000b9c20dd",
     "skab_commit": "b2c0d46c2971dcbfe71e26087b6d231998bb91c2",
     "python": "3.10.11",
     "numpy": "2.2.6",
@@ -528,5 +528,11 @@
     }
   },
   "variant": "int8_tflite",
+  "calibration": {
+    "method": "log_ratio_sigmoid",
+    "center": 0.9413891421406108,
+    "scale": 0.17662995947412835
+  },
+  "config_version": "a1a131b1",
   "model_version": "conv_ae_v1"
 }

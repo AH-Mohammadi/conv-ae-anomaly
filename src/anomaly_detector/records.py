@@ -56,13 +56,15 @@ class OutputRecord:
         return json.dumps(self.to_dict())
 
 
-def build_output_record(rec, *, model_version: str, config_version: str,
-                        file: str | None = None) -> OutputRecord:
-    """rec: a stream.StreamRecord (raw score, calibrated_score, threshold, etc.)."""
+def build_output_record(rec, *, model_version: str, file: str | None = None) -> OutputRecord:
+    """rec: a stream.StreamRecord. config_version is read from rec itself (the
+    detector's config AT THE TIME this record was emitted), so a mid-stream
+    runtime reconfiguration is reflected automatically. model_version is supplied
+    by the caller since it names the deployed artifact (static for this project)."""
     return OutputRecord(
         schema_version=SCHEMA_VERSION,
         timestamp=datetime.now(timezone.utc).isoformat(timespec="milliseconds"),
         window_id=rec.sample_index, score=rec.calibrated_score, raw_error=rec.score,
         threshold=rec.threshold, is_anomaly=rec.is_anomaly, model_version=model_version,
-        config_version=config_version, processing_ns=rec.processing_ns, stage=rec.stage, file=file,
+        config_version=rec.config_version, processing_ns=rec.processing_ns, stage=rec.stage, file=file,
     )

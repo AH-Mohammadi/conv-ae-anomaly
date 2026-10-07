@@ -2,10 +2,16 @@
 records (JSONL) and a stability summary. One StreamingDetector per file (fresh
 reference/normalizer per episode), matching the offline per-file normalization protocol.
 
+--runtime-config-file makes the detector poll a local JSON command file (written by
+scripts/set_runtime_config.py) every --runtime-config-check-every samples and apply any
+change via apply_new_config()/reconfigure(). This is the local mechanism simulating a
+future Coordinator command -- no networking, no MQTT.
+
 Examples:
   python scripts/replay_stream.py --speed 0                      # as fast as possible (default)
   python scripts/replay_stream.py --speed 1 --files valve1/0.csv  # real time, one file
   python scripts/replay_stream.py --loops 5 --speed 0             # soak test, 5x all files
+  python scripts/replay_stream.py --runtime-config-file reports/metrics/runtime_config_command.json
 """
 from __future__ import annotations
 
@@ -21,7 +27,35 @@ from anomaly_detector.data import check_reference_segment, discover_files, file_
 from anomaly_detector.inference import TFLiteAutoencoder
 from anomaly_detector.records import build_output_record
 from anomaly_detector.replay import REPLAY_SCHEMA, replay_samples
+from anomaly_detector.runtime_config import ConfigError, apply_new_config
 from anomaly_detector.stream import StreamingDetector
+
+
+def _make_config_poller(command_file: str, log=print):
+    """Returns an on_tick(i, detector) callback that applies command_file's content
+    whenever its mtime changes. Reset (fresh mtime tracker) once per episode, so an
+    outstanding command is (re-)applied to each new per-file detector too."""
+    state = {"mtime": None}
+
+    def on_tick(_i, det):
+        path = Path(command_file)
+        try:
+            mtime = path.stat().st_mtime
+        except FileNotFoundError:
+            return
+        if state["mtime"] is not None and mtime == state["mtime"]:
+            return
+        state["mtime"] = mtime
+        try:
+            hparams = json.loads(path.read_text(encoding="utf-8"))
+            new_cfg = apply_new_config(det.current_runtime_config(), hparams)
+            det.reconfigure(new_cfg)
+            log(f"[runtime-config] applied {hparams} -> threshold={new_cfg.threshold:.4f} "
+                f"config_version={new_cfg.config_version}")
+        except (ConfigError, json.JSONDecodeError) as exc:
+            log(f"[runtime-config] REJECTED {command_file}: {exc}")
+
+    return on_tick, state
 
 
 def main() -> None:
@@ -34,6 +68,9 @@ def main() -> None:
     ap.add_argument("--loops", type=int, default=1, help="repeat the file list N times (soak test)")
     ap.add_argument("--speed", type=float, default=0.0,
                     help="0 = as fast as possible; 1 = real time; 10 = 10x real time")
+    ap.add_argument("--runtime-config-file", default=None,
+                    help="poll this JSON file for hot-swappable config changes mid-stream")
+    ap.add_argument("--runtime-config-check-every", type=int, default=25)
     ap.add_argument("--out", default="reports/metrics/stream_scores.jsonl")
     ap.add_argument("--summary-out", default="reports/metrics/replay_summary.json")
     a = ap.parse_args()
@@ -45,7 +82,6 @@ def main() -> None:
     det_backend = TFLiteAutoencoder(model_path=model_dir / v["file"])
     calibrator = Calibrator.from_dict(v["calibration"])
     model_version = f"{meta['model_version']}:{a.variant}"
-    config_version = v["config_version"]
 
     all_files = discover_files(cfg.dataset.root)
     excluded = set(cfg.dataset.exclude_files)
@@ -74,15 +110,19 @@ def main() -> None:
                     reference_rows=cfg.dataset.reference_rows, threshold=v["threshold"],
                     stride=cfg.windowing.stride,
                     normalization_method=cfg.preprocessing.normalization_method,
-                    calibrator=calibrator,
+                    calibrator=calibrator, model_version=model_version,
                 )
+                on_tick, tick_every = None, 1
+                if a.runtime_config_file:
+                    on_tick, _ = _make_config_poller(a.runtime_config_file)
+                    tick_every = a.runtime_config_check_every
 
                 def cb(rec, name=file_key(path)):
-                    out = build_output_record(rec, model_version=model_version,
-                                              config_version=config_version, file=name)
+                    out = build_output_record(rec, model_version=model_version, file=name)
                     out_fh.write(out.to_json() + "\n")
 
-                _, stats = replay_samples(series.values, det, gaps_s=gaps, speed=a.speed, record_cb=cb)
+                _, stats = replay_samples(series.values, det, gaps_s=gaps, speed=a.speed,
+                                          record_cb=cb, on_tick=on_tick, tick_every=tick_every)
                 s = stats.summary()
                 s["file"] = file_key(path)
                 s["loop"] = loop
@@ -96,7 +136,7 @@ def main() -> None:
 
     summary = {
         "schema_version": REPLAY_SCHEMA, "variant": a.variant, "model_version": model_version,
-        "config_version": config_version, "speed": a.speed, "loops": a.loops,
+        "speed": a.speed, "loops": a.loops,
         "n_episodes": len(episodes),
         "total_records": sum(e["n_records"] for e in episodes),
         "total_missed_windows": sum(e["missed_windows"] for e in episodes),

@@ -56,7 +56,8 @@ class StabilityStats:
 
 def replay_samples(samples: np.ndarray, detector: StreamingDetector, *,
                    gaps_s: np.ndarray | None = None, speed: float = 0.0,
-                   rss_every: int = 500, record_cb=None) -> tuple[list[StreamRecord], StabilityStats]:
+                   rss_every: int = 500, record_cb=None,
+                   on_tick=None, tick_every: int = 1) -> tuple[list[StreamRecord], StabilityStats]:
     """Feed ``samples`` (N, C) into ``detector`` one at a time.
 
     gaps_s[i] is the real-world gap BEFORE sample i (gaps_s[0] ignored). If given and
@@ -64,7 +65,10 @@ def replay_samples(samples: np.ndarray, detector: StreamingDetector, *,
     deadline is considered missed if processing took longer than that gap. speed <= 0
     (default) processes as fast as possible, for tests and long stability soaks.
     record_cb(record) is called for every emitted StreamRecord (e.g. to stream to disk
-    instead of keeping every record in memory).
+    instead of keeping every record in memory). on_tick(i, detector), if given, is
+    called every tick_every samples REGARDLESS of whether a record was emitted -- e.g.
+    to poll for a runtime-config change and call detector.reconfigure() (see
+    scripts/replay_stream.py's --runtime-config-file).
     """
     n = samples.shape[0]
     stats = StabilityStats(n_samples=n)
@@ -93,5 +97,7 @@ def replay_samples(samples: np.ndarray, detector: StreamingDetector, *,
                 records.append(rec)
         if rss_every and i % rss_every == 0:
             stats.rss_samples_mb.append(_rss_mb())
+        if on_tick is not None and i % tick_every == 0:
+            on_tick(i, detector)
 
     return records, stats

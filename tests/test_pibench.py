@@ -29,32 +29,13 @@ from anomaly_detector.train import run_conv_ae
 
 
 @pytest.fixture(scope="module")
-def built(tmp_path_factory):
-    root = tmp_path_factory.mktemp("skab")
-    for sub, seeds in (("valve1", (1, 2)), ("other", (3,))):
-        d = root / sub
-        d.mkdir()
-        for i, seed in enumerate(seeds):
-            _write_file(d / f"{i}.csv", seed)
-    work = tmp_path_factory.mktemp("work")
-    cfg = Config(
-        dataset=DatasetConfig(root=str(root), reference_rows=400, train_rows=300),
-        model=ModelConfig(latent_dim=8, filter_count=8, kernel_size=5),
-        training=TrainingConfig(epochs=15, batch_size=64, patience=5),
-        compression=CompressionConfig(calibration_samples=100),
-        detector=DetectorConfig(name="conv_ae", threshold=None),
-        output=OutputConfig(metrics_dir=str(work / "reports"), model_dir=str(work / "m_v1")),
-    )
-    _, model, _ = run_conv_ae(cfg)
-    report, blobs, cards = run_compression(cfg, model, model_dir=work / "m_v1")
-    save_compression_outputs(report, blobs, cards, cfg, work / "m_v1")
-    return {"cfg": cfg, "model_dir": work / "m_v1",
-            "bundle": export_bundle(cfg, work / "m_v1", work / "bundle")}
+def built(small_model_dir):
+    return small_model_dir
 
 
 @pytest.fixture(scope="module")
 def bundle(built):
-    return built["bundle"]
+    return export_bundle(built["cfg"], built["model_dir"], built["model_dir"].parent / "bundle")
 
 
 # ---- pure helpers ------------------------------------------------------------------

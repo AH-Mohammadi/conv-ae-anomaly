@@ -68,3 +68,40 @@ def test_memory_growth_summary_shape():
     _, stats = replay_samples(samples, _detector(), speed=0.0, rss_every=20)
     mem = stats.summary()["memory"]
     assert "rss_samples_mb" in mem and "growth" in mem
+
+
+def test_on_tick_called_every_sample_by_default():
+    rng = np.random.default_rng(5)
+    samples = rng.standard_normal((30, C))
+    ticks = []
+    replay_samples(samples, _detector(), speed=0.0, on_tick=lambda i, det: ticks.append(i))
+    assert ticks == list(range(30))
+
+
+def test_on_tick_throttled_by_tick_every():
+    rng = np.random.default_rng(6)
+    samples = rng.standard_normal((30, C))
+    ticks = []
+    replay_samples(samples, _detector(), speed=0.0, on_tick=lambda i, det: ticks.append(i), tick_every=10)
+    assert ticks == [0, 10, 20]
+
+
+def test_on_tick_can_reconfigure_mid_stream_without_disrupting_records():
+    from anomaly_detector.calibration import CalibrationParams, Calibrator
+    from anomaly_detector.runtime_config import RuntimeConfig
+
+    cal = Calibrator(CalibrationParams("log_ratio_sigmoid", 0.5, 0.2))
+    det = _detector(threshold=0.5, calibrator=cal, model_version="m")
+    rng = np.random.default_rng(7)
+    samples = rng.standard_normal((100, C))
+
+    def on_tick(i, d):
+        if i == 60:
+            d.reconfigure(RuntimeConfig(threshold=0.9, calibration_scale=0.2, model_version="m"))
+
+    records, stats = replay_samples(samples, det, speed=0.0, on_tick=on_tick)
+    s = stats.summary()
+    assert s["missed_windows"] == 0 and s["n_records"] == s["n_expected_records"]
+    thresholds = [r.threshold for r in records]
+    assert thresholds[0] == 0.5 and thresholds[-1] == 0.9
+    assert sorted(set(thresholds)) == [0.5, 0.9]  # exactly one clean switch, no flapping

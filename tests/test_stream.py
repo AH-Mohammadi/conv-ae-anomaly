@@ -141,3 +141,96 @@ def test_streaming_without_calibrator_leaves_calibrated_score_none():
     for _ in range(21):
         rec = det.process_sample(rng.standard_normal(C))
     assert rec.calibrated_score is None
+
+
+def _detector_with_calibration(threshold=1.0, scale=0.2, model_version="m1"):
+    from anomaly_detector.calibration import CalibrationParams, Calibrator
+
+    cal = Calibrator(CalibrationParams("log_ratio_sigmoid", threshold, scale))
+    return _detector(threshold=threshold, calibrator=cal, model_version=model_version)
+
+
+def test_reconfigure_atomically_swaps_without_touching_buffer_or_position():
+    from anomaly_detector.runtime_config import RuntimeConfig
+
+    det = _detector_with_calibration(threshold=1.0, scale=0.2)
+    rng = np.random.default_rng(10)
+    for _ in range(25):  # cross into SCORING
+        det.process_sample(rng.standard_normal(C))
+    assert det.stage is Stage.SCORING
+
+    buf_id = id(det._ring._buf)
+    buf_contents = det._ring.window().copy()
+    sample_index_before = det.sample_index
+    old_version = det.config_version
+
+    new_cfg = RuntimeConfig(threshold=2.0, calibration_scale=0.5, model_version="m1")
+    det.reconfigure(new_cfg)
+
+    assert id(det._ring._buf) == buf_id                     # same object, not reallocated
+    assert np.array_equal(det._ring.window(), buf_contents)  # contents untouched
+    assert det.sample_index == sample_index_before            # stream position untouched
+    assert det.threshold == 2.0 and det.calibrator.params.scale == 0.5
+    assert det.config_version != old_version
+    assert det.calibrator.transform_one(2.0) == pytest.approx(0.5, abs=1e-12)
+
+    rec = det.process_sample(rng.standard_normal(C))  # stream continues normally
+    assert rec is not None and rec.threshold == 2.0 and rec.config_version == det.config_version
+
+
+def test_reconfigure_rejects_mismatched_model_version_without_mutating_state():
+    from anomaly_detector.runtime_config import ConfigError, RuntimeConfig
+
+    det = _detector_with_calibration(model_version="model_A")
+    before = (det.threshold, det.calibrator.params.scale, det.config_version)
+    with pytest.raises(ConfigError, match="model_A"):
+        det.reconfigure(RuntimeConfig(threshold=9.0, calibration_scale=0.9, model_version="model_B"))
+    assert (det.threshold, det.calibrator.params.scale, det.config_version) == before
+
+
+def test_reconfigure_without_calibrator_raises():
+    from anomaly_detector.runtime_config import ConfigError, RuntimeConfig
+
+    det = _detector()  # no calibrator given
+    with pytest.raises(ConfigError):
+        det.current_runtime_config()
+    with pytest.raises(ConfigError):
+        det.reconfigure(RuntimeConfig(threshold=1.0, calibration_scale=0.2, model_version=""))
+
+
+def test_current_runtime_config_round_trip_is_a_no_op():
+    det = _detector_with_calibration(threshold=1.3, scale=0.25, model_version="m")
+    snap = det.current_runtime_config()
+    assert snap.threshold == 1.3 and snap.calibration_scale == 0.25 and snap.model_version == "m"
+    det.reconfigure(snap)
+    assert det.threshold == 1.3 and det.calibrator.params.scale == 0.25
+
+
+def test_records_carry_config_version_active_at_emission_time():
+    """Records emitted before a mid-stream reconfigure() keep the OLD config_version;
+    records emitted after carry the NEW one -- each record reflects the config that
+    was active when it was produced, not whatever the detector's config is later."""
+    from anomaly_detector.runtime_config import RuntimeConfig
+
+    det = _detector_with_calibration(threshold=1.0, scale=0.2)
+    rng = np.random.default_rng(11)
+    for _ in range(21):  # advance past the reference phase (reference_rows=20) into SCORING
+        det.process_sample(rng.standard_normal(C))
+    assert det.stage is Stage.SCORING
+
+    before = [rec for _ in range(5)
+             if (rec := det.process_sample(rng.standard_normal(C))) is not None]
+    assert len(before) == 5
+
+    det.reconfigure(RuntimeConfig(threshold=3.0, calibration_scale=0.2, model_version="m1"))
+
+    after = [rec for _ in range(5)
+            if (rec := det.process_sample(rng.standard_normal(C))) is not None]
+    assert len(after) == 5
+
+    before_versions = {r.config_version for r in before}
+    after_versions = {r.config_version for r in after}
+    assert len(before_versions) == 1 and len(after_versions) == 1
+    assert before_versions != after_versions
+    assert all(r.threshold == 1.0 for r in before)
+    assert all(r.threshold == 3.0 for r in after)

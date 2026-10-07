@@ -8,6 +8,7 @@ Work in progress, built iteration by iteration.
 - **Iteration 4:** Raspberry Pi batch benchmark (latency, memory, CPU, thermals, desktop-vs-device agreement). Recommendation: deploy `fp32_tflite` (see report).
 - **Iteration 5:** streaming inference (ring buffer, startup handling, real-time replay, stability checks).
 - **Iteration 6:** score calibration ([0,1]) and a versioned structured output record.
+- **Iteration 7:** runtime configuration (hot-swap threshold/calibration mid-stream, no networking).
 
 ## Setup
 
@@ -134,3 +135,32 @@ python scripts/replay_stream.py --speed 0                         # now emits st
   active runtime-adjustable parameters (today: just the threshold); it is the hook Iteration 7's runtime
   reconfiguration will use to mark records as produced under a new configuration, without a new
   model_version.
+
+## Runtime configuration (Iteration 7)
+
+```bash
+python scripts/set_runtime_config.py --threshold 1.2            # write a local "command" file
+python scripts/replay_stream.py --runtime-config-file reports/metrics/runtime_config_command.json
+python scripts/demo_runtime_reconfig.py --file valve1/0.csv --new-threshold 2.0   # self-contained demo
+```
+
+- `runtime_config.py` classifies parameters explicitly: `HOT_SWAPPABLE_FIELDS = {"threshold",
+  "calibration_scale"}` ("alert sensitivity"); everything else (window size, filters, kernel size,
+  normalization method, the trained weights/TFLite variant itself) is rejected by `apply_new_config()`
+  with an error naming the artifact-dependent change that would be needed instead.
+- `StreamingDetector.reconfigure()` atomically swaps `threshold`/`calibrator`; it never touches the ring
+  buffer, the normalizer, or the stream position, and it refuses a config built for a different
+  `model_version`. Verified on real SKAB (`valve1/0.csv`): 747/747 records, 0 missed windows, the ring
+  buffer's identity and contents unchanged across the reconfiguration, and `window_id` stayed contiguous
+  across the change.
+- The calibration center always tracks the active threshold, so `score(threshold) == 0.5` stays exact
+  after a hot-swap; the calibration scale ("sensitivity") can be adjusted independently.
+- Every output record's `config_version` reflects whichever config was active WHEN that record was
+  produced (not the detector's current config), so a consumer can tell exactly where in the stream a
+  change took effect.
+- `scripts/demo_runtime_reconfig.py` is the end-to-end demonstration the iteration asks for: detector
+  running -> a local JSON command file is written (simulating a future Coordinator) -> the detector
+  notices it on its next tick and calls `apply_new_config()`/`reconfigure()` -> the SAME stream
+  continues, uninterrupted. `scripts/replay_stream.py --runtime-config-file ...` offers the same
+  mechanism generically (polled every `--runtime-config-check-every` samples; the command stays in
+  effect across subsequent per-file episodes until replaced). No networking, no MQTT, no Coordinator.

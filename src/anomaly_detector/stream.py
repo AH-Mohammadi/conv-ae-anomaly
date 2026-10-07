@@ -22,7 +22,9 @@ import numpy as np
 
 from .calibration import Calibrator
 from .preprocessing import Normalizer
+from .records import config_fingerprint
 from .ringbuffer import RingBuffer
+from .runtime_config import ConfigError, RuntimeConfig
 
 
 class Stage(Enum):
@@ -39,6 +41,7 @@ class StreamRecord:
     processing_ns: int
     stage: str
     calibrated_score: float | None = None  # in [0, 1]; set only if a Calibrator was given
+    config_version: str = ""               # which runtime config produced this record
 
 
 class StreamingDetector:
@@ -47,7 +50,7 @@ class StreamingDetector:
     def __init__(self, score_window_fn: Callable[[np.ndarray], float], n_channels: int,
                 window_size: int, reference_rows: int, threshold: float,
                 stride: int = 1, normalization_method: str = "zscore",
-                calibrator: Calibrator | None = None) -> None:
+                calibrator: Calibrator | None = None, model_version: str | None = None) -> None:
         if reference_rows <= window_size:
             raise ValueError("reference_rows must be > window_size")
         if stride < 1:
@@ -59,6 +62,8 @@ class StreamingDetector:
         self.threshold = threshold
         self.stride = stride
         self.calibrator = calibrator
+        self.model_version = model_version
+        self.config_version = self._fingerprint(threshold, calibrator)
 
         self._normalizer = Normalizer(normalization_method)
         self._ref_buf = np.empty((reference_rows, n_channels), dtype=np.float64)
@@ -66,6 +71,42 @@ class StreamingDetector:
         self.stage = Stage.REFERENCE
         self.sample_index = 0          # 0-based count of samples seen
         self._since_scoring_start = 0  # for stride alignment
+
+    @staticmethod
+    def _fingerprint(threshold: float, calibrator: Calibrator | None) -> str:
+        scale = calibrator.params.scale if calibrator is not None else None
+        return config_fingerprint({"threshold": threshold, "calibration_scale": scale})
+
+    def current_runtime_config(self) -> RuntimeConfig:
+        """Snapshot the active hot-swappable configuration as a RuntimeConfig."""
+        if self.calibrator is None:
+            raise ConfigError(
+                "this detector was constructed without a calibrator; runtime "
+                "reconfiguration requires one (pass calibrator= at construction)"
+            )
+        return RuntimeConfig(threshold=self.threshold, calibration_scale=self.calibrator.params.scale,
+                             model_version=self.model_version or "")
+
+    def reconfigure(self, new_config: RuntimeConfig) -> None:
+        """Atomically swap threshold + calibrator. Never touches the ring buffer,
+        the normalizer, or sample/stage state, so a window already in flight is
+        unaffected; the very next scored sample uses the new configuration."""
+        if self.calibrator is None:
+            raise ConfigError(
+                "this detector was constructed without a calibrator; runtime "
+                "reconfiguration requires one (pass calibrator= at construction)"
+            )
+        if (self.model_version is not None and new_config.model_version
+                and new_config.model_version != self.model_version):
+            raise ConfigError(
+                f"runtime config is for model_version={new_config.model_version!r}, this "
+                f"detector is running {self.model_version!r}; refusing to apply it (would "
+                "silently change decision semantics for a different artifact)"
+            )
+        calibrator = new_config.calibrator  # build BEFORE mutating self: fail fast, no partial state
+        self.threshold = new_config.threshold
+        self.calibrator = calibrator
+        self.config_version = new_config.config_version
 
     def _enter_scoring(self) -> None:
         self._normalizer.fit(self._ref_buf)
@@ -98,5 +139,5 @@ class StreamingDetector:
         calibrated = self.calibrator.transform_one(score) if self.calibrator is not None else None
         rec = StreamRecord(self.sample_index - 1, score, self.threshold,
                            score > self.threshold, perf_counter_ns() - t0, self.stage.value,
-                           calibrated_score=calibrated)
+                           calibrated_score=calibrated, config_version=self.config_version)
         return rec
