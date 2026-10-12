@@ -1,0 +1,21 @@
+{
+  "file": "valve1/0.csv",
+  "expected_records": 747,
+  "actual_records": 747,
+  "missed_windows": 0,
+  "ring_buffer_identity_unchanged": true,
+  "window_id_contiguous_across_change": true,
+  "config_applied": true,
+  "applied_at_record": 373,
+  "applied_at_sample": 773,
+  "before_change": {
+    "n_records": 373,
+    "threshold": 0.8980500556802256,
+    "config_version": "1ad41ad5"
+  },
+  "after_change": {
+    "n_records": 374,
+    "threshold": 2.0,
+    "config_version": "1aee4585"
+  }
+}
